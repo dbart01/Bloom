@@ -11,8 +11,9 @@ import Foundation
 public struct Fragment: CustomStringConvertible, CustomDebugStringConvertible {
     
     public let content:     String
-    public let attributes:  AttributeCollection
     public let shouldClear: Bool
+    
+    public private(set) var attributes: AttributeCollection
     
     // ----------------------------------
     //  MARK: - Init -
@@ -21,6 +22,17 @@ public struct Fragment: CustomStringConvertible, CustomDebugStringConvertible {
         self.content     = content
         self.attributes  = attributeCollection
         self.shouldClear = shouldClear
+    }
+    
+    // ----------------------------------
+    //  MARK: - Attributes -
+    //
+    public mutating func add(attribute: Attribute) {
+        self.attributes.add(attribute: attribute)
+    }
+    
+    public mutating func remove(attribute: Attribute) {
+        self.attributes.remove(attribute: attribute)
     }
     
     // ----------------------------------

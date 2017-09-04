@@ -12,8 +12,8 @@ public struct AttributeCollection: CustomStringConvertible, CustomDebugStringCon
     
     public static var currentEscapeSequence: EscapeSequence = .default
     
-    public let attributes:     [Attribute]
     public let escapeSequence: EscapeSequence
+    public private(set) var attributes: [Attribute]
     
     // ----------------------------------
     //  MARK: - Init -
@@ -32,6 +32,33 @@ public struct AttributeCollection: CustomStringConvertible, CustomDebugStringCon
     //
     public var hasAttributes: Bool {
         return !self.attributes.isEmpty
+    }
+    
+    // ----------------------------------
+    //  MARK: - Attributes -
+    //
+    public mutating func add(attribute: Attribute) {
+        if let index = self.index(of: attribute) {
+            self.attributes.remove(at: index)
+            self.attributes.insert(attribute, at: index)
+        } else {
+            self.attributes.append(attribute)
+        }
+    }
+    
+    public mutating func remove(attribute: Attribute) {
+        if let index = self.index(of: attribute) {
+            self.attributes.remove(at: index)
+        }
+    }
+    
+    private func index(of attribute: Attribute) -> Int? {
+        for (index, currentAttribute) in self.attributes.enumerated() {
+            if currentAttribute.value == attribute.value {
+                return index
+            }
+        }
+        return nil
     }
     
     // ----------------------------------
