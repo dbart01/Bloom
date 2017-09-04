@@ -30,7 +30,7 @@ public struct AttributeCollection: CustomStringConvertible, CustomDebugStringCon
     // ----------------------------------
     //  MARK: - Queries -
     //
-    public func hasAttributes() -> Bool {
+    public var hasAttributes: Bool {
         return !self.attributes.isEmpty
     }
     

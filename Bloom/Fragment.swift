@@ -27,7 +27,7 @@ public struct Fragment: CustomStringConvertible, CustomDebugStringConvertible {
     //  MARK: - Description -
     //
     public var description: String {
-        if attributes.isEmpty {
+        if attributes.hasAttributes {
             return self.content
         } else {
             
