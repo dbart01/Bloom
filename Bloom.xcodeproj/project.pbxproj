@@ -10,6 +10,13 @@
 		9A38277E1F5D9DCF0085363F /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
 		9A3827831F5D9DCF0085363F /* BloomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* BloomTests.swift */; };
 		9A3827851F5D9DCF0085363F /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A38278F1F5D9E1C0085363F /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38278E1F5D9E1C0085363F /* Fragment.swift */; };
+		9A3827931F5DA4410085363F /* EscapeSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827921F5DA4410085363F /* EscapeSequence.swift */; };
+		9A3827951F5DA4610085363F /* TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827941F5DA4610085363F /* TextColor.swift */; };
+		9A3827971F5DA46C0085363F /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827961F5DA46C0085363F /* BackgroundColor.swift */; };
+		9A3827991F5DE19D0085363F /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827981F5DE19D0085363F /* Attribute.swift */; };
+		9A38279D1F5DE27D0085363F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279C1F5DE27D0085363F /* Style.swift */; };
+		9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279F1F5DE8050085363F /* AttributeCollection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,13 @@
 		9A38277D1F5D9DCF0085363F /* BloomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827821F5D9DCF0085363F /* BloomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomTests.swift; sourceTree = "<group>"; };
 		9A3827841F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A38278E1F5D9E1C0085363F /* Fragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
+		9A3827921F5DA4410085363F /* EscapeSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeSequence.swift; sourceTree = "<group>"; };
+		9A3827941F5DA4610085363F /* TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColor.swift; sourceTree = "<group>"; };
+		9A3827961F5DA46C0085363F /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
+		9A3827981F5DE19D0085363F /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
+		9A38279C1F5DE27D0085363F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		9A38279F1F5DE8050085363F /* AttributeCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCollection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				9A3827771F5D9DCF0085363F /* Bloom.h */,
+				9A38278E1F5D9E1C0085363F /* Fragment.swift */,
+				9A38279E1F5DE5DB0085363F /* Attributes */,
 				9A3827781F5D9DCF0085363F /* Info.plist */,
 			);
 			path = Bloom;
@@ -84,6 +100,19 @@
 				9A3827841F5D9DCF0085363F /* Info.plist */,
 			);
 			path = BloomTests;
+			sourceTree = "<group>";
+		};
+		9A38279E1F5DE5DB0085363F /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				9A3827941F5DA4610085363F /* TextColor.swift */,
+				9A3827961F5DA46C0085363F /* BackgroundColor.swift */,
+				9A38279C1F5DE27D0085363F /* Style.swift */,
+				9A3827981F5DE19D0085363F /* Attribute.swift */,
+				9A38279F1F5DE8050085363F /* AttributeCollection.swift */,
+				9A3827921F5DA4410085363F /* EscapeSequence.swift */,
+			);
+			path = Attributes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +177,7 @@
 				TargetAttributes = {
 					9A3827731F5D9DCF0085363F = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					9A38277C1F5D9DCF0085363F = {
@@ -196,6 +226,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A3827991F5DE19D0085363F /* Attribute.swift in Sources */,
+				9A38278F1F5D9E1C0085363F /* Fragment.swift in Sources */,
+				9A3827951F5DA4610085363F /* TextColor.swift in Sources */,
+				9A3827971F5DA46C0085363F /* BackgroundColor.swift in Sources */,
+				9A38279D1F5DE27D0085363F /* Style.swift in Sources */,
+				9A3827931F5DA4410085363F /* EscapeSequence.swift in Sources */,
+				9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +371,7 @@
 		9A3827891F5D9DCF0085363F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.Bloom;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +394,7 @@
 		9A38278A1F5D9DCF0085363F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +416,7 @@
 		9A38278C1F5D9DCF0085363F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MK88G5Q6ZN;
 				INFOPLIST_FILE = BloomTests/Info.plist;
@@ -390,6 +431,7 @@
 		9A38278D1F5D9DCF0085363F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MK88G5Q6ZN;
 				INFOPLIST_FILE = BloomTests/Info.plist;
