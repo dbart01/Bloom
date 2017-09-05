@@ -102,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				9A3827741F5D9DCF0085363F /* Bloom.framework */,
-				9A38277D1F5D9DCF0085363F /* BloomTests.xctest */,
 				9A65F9CE1F5E444E00380FA1 /* Bloom.framework */,
+				9A38277D1F5D9DCF0085363F /* BloomTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
