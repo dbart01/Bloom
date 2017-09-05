@@ -6,7 +6,7 @@
 //  Copyright © 2017 Dima Bart. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Bloom.
 FOUNDATION_EXPORT double BloomVersionNumber;
