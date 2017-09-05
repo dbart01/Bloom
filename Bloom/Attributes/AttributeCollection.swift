@@ -12,60 +12,77 @@ public struct AttributeCollection: CustomStringConvertible, CustomDebugStringCon
     
     public static var currentEscapeSequence: EscapeSequence = .default
     
-    public let escapeSequence: EscapeSequence
-    public private(set) var attributes: [Attribute]
+    public internal(set) var textColor:       TextColor?
+    public internal(set) var backgroundColor: BackgroundColor?
+    public internal(set) var styleAttributes: Set<Style>
+    public internal(set) var escapeSequence:  EscapeSequence
     
     // ----------------------------------
     //  MARK: - Init -
     //
-    public init(attributes: [Attribute], escapeSequence: EscapeSequence? = nil) {
-        self.attributes     = attributes
-        self.escapeSequence = escapeSequence ?? AttributeCollection.currentEscapeSequence
+    public init(textColor: TextColor? = nil, backgroundColor: BackgroundColor? = nil, styleAttributes: Set<Style> = [], escapeSequence: EscapeSequence? = nil) {
+        self.textColor       = textColor
+        self.backgroundColor = backgroundColor
+        self.styleAttributes = styleAttributes
+        self.escapeSequence  = escapeSequence ?? AttributeCollection.currentEscapeSequence
     }
     
     public static func clear() -> AttributeCollection {
-        return AttributeCollection(attributes: [Style.clear])
+        return AttributeCollection(styleAttributes: [Style.clear])
     }
     
     // ----------------------------------
     //  MARK: - Queries -
     //
     public var hasAttributes: Bool {
-        return !self.attributes.isEmpty
+        if self.textColor != nil || self.backgroundColor != nil || !self.styleAttributes.isEmpty {
+            return true
+        }
+        return false
     }
     
     // ----------------------------------
     //  MARK: - Attributes -
     //
-    public mutating func add(attribute: Attribute) {
-        if let index = self.index(of: attribute) {
-            self.attributes.remove(at: index)
-            self.attributes.insert(attribute, at: index)
-        } else {
-            self.attributes.append(attribute)
-        }
-    }
-    
-    public mutating func remove(attribute: Attribute) {
-        if let index = self.index(of: attribute) {
-            self.attributes.remove(at: index)
-        }
-    }
-    
-    private func index(of attribute: Attribute) -> Int? {
-        for (index, currentAttribute) in self.attributes.enumerated() {
-            if currentAttribute.value == attribute.value {
-                return index
-            }
-        }
-        return nil
-    }
+//    public mutating func add(attribute: Attribute) {
+//        if let index = self.index(of: attribute) {
+//            self.attributes.remove(at: index)
+//            self.attributes.insert(attribute, at: index)
+//        } else {
+//            self.attributes.append(attribute)
+//        }
+//    }
+//
+//    public mutating func remove(attribute: Attribute) {
+//        if let index = self.index(of: attribute) {
+//            self.attributes.remove(at: index)
+//        }
+//    }
+//
+//    private func index(of attribute: Attribute) -> Int? {
+//        for (index, currentAttribute) in self.attributes.enumerated() {
+//            if currentAttribute.value == attribute.value {
+//                return index
+//            }
+//        }
+//        return nil
+//    }
     
     // ----------------------------------
     //  MARK: - Description -
     //
     public var description: String {
-        return "\(self.escapeSequence)[\(self.attributes.stringRepresentation)m"
+        var attributes: [Attribute] = Array(self.styleAttributes)
+        
+        if let textColor = self.textColor {
+            attributes.append(textColor)
+        }
+        
+        if let backgroundColor = self.backgroundColor {
+            attributes.append(backgroundColor)
+        }
+        
+        return "\(self.escapeSequence)[\(attributes.stringRepresentation)m"
     }
     
     public var debugDescription: String {
