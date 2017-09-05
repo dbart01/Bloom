@@ -42,33 +42,6 @@ public struct AttributeCollection: CustomStringConvertible, CustomDebugStringCon
     }
     
     // ----------------------------------
-    //  MARK: - Attributes -
-    //
-//    public mutating func add(attribute: Attribute) {
-//        if let index = self.index(of: attribute) {
-//            self.attributes.remove(at: index)
-//            self.attributes.insert(attribute, at: index)
-//        } else {
-//            self.attributes.append(attribute)
-//        }
-//    }
-//
-//    public mutating func remove(attribute: Attribute) {
-//        if let index = self.index(of: attribute) {
-//            self.attributes.remove(at: index)
-//        }
-//    }
-//
-//    private func index(of attribute: Attribute) -> Int? {
-//        for (index, currentAttribute) in self.attributes.enumerated() {
-//            if currentAttribute.value == attribute.value {
-//                return index
-//            }
-//        }
-//        return nil
-//    }
-    
-    // ----------------------------------
     //  MARK: - Description -
     //
     public var description: String {

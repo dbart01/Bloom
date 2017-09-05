@@ -48,17 +48,6 @@ public final class Fragment: CustomStringConvertible, CustomDebugStringConvertib
     }
     
     // ----------------------------------
-    //  MARK: - Attributes -
-    //
-//    public func add(attribute: Attribute) {
-//        self.attributes.add(attribute: attribute)
-//    }
-//    
-//    public func remove(attribute: Attribute) {
-//        self.attributes.remove(attribute: attribute)
-//    }
-    
-    // ----------------------------------
     //  MARK: - Fragments -
     //
     internal func appending(_ fragment: Fragment) -> Fragment {

@@ -17,14 +17,3 @@ public extension RawRepresentable where Self.RawValue == Int {
         return self.rawValue
     }
 }
-
-//public extension Attribute {
-//    var hashValue: Int {
-//        return self.value
-//    }
-//    
-//    static func ==(lhs: Attribute, rhs: Attribute) -> Bool {
-//        return lhs.value == rhs.value
-//    }
-//}
-
