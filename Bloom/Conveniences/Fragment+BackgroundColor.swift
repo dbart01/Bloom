@@ -10,87 +10,87 @@ import Foundation
 
 extension Fragment {
     
-    var defaultBackground: Fragment {
+    public var defaultBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.default
         return self
     }
     
-    var blackBackground: Fragment {
+    public var blackBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.black
         return self
     }
     
-    var redBackground: Fragment {
+    public var redBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.red
         return self
     }
     
-    var greenBackground: Fragment {
+    public var greenBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.green
         return self
     }
     
-    var yellowBackground: Fragment {
+    public var yellowBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.yellow
         return self
     }
     
-    var blueBackground: Fragment {
+    public var blueBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.blue
         return self
     }
     
-    var magentaBackground: Fragment {
+    public var magentaBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.magenta
         return self
     }
     
-    var cyanBackground: Fragment {
+    public var cyanBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.cyan
         return self
     }
     
-    var lightGrayBackground: Fragment {
+    public var lightGrayBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.lightGray
         return self
     }
     
-    var darkGrayBackground: Fragment {
+    public var darkGrayBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.darkGray
         return self
     }
     
-    var lightRedBackground: Fragment {
+    public var lightRedBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.lightRed
         return self
     }
     
-    var lightGreenBackground: Fragment {
+    public var lightGreenBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.lightGreen
         return self
     }
     
-    var lightYellowBackground: Fragment {
+    public var lightYellowBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.lightYellow
         return self
     }
     
-    var lightBlueBackground: Fragment {
+    public var lightBlueBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.lightBlue
         return self
     }
     
-    var lightMagentaBackground: Fragment {
+    public var lightMagentaBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.lightMagenta
         return self
     }
     
-    var lightCyanBackground: Fragment {
+    public var lightCyanBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.lightCyan
         return self
     }
     
-    var whiteBackground: Fragment {
+    public var whiteBackground: Fragment {
         self.attributes.backgroundColor = BackgroundColor.white
         return self
     }
@@ -98,103 +98,103 @@ extension Fragment {
 
 extension String {
     
-    var defaultBackground: Fragment {
+    public var defaultBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.default
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var blackBackground: Fragment {
+    public var blackBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.black
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var redBackground: Fragment {
+    public var redBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.red
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var greenBackground: Fragment {
+    public var greenBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.green
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var yellowBackground: Fragment {
+    public var yellowBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.yellow
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var blueBackground: Fragment {
+    public var blueBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.blue
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var magentaBackground: Fragment {
+    public var magentaBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.magenta
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var cyanBackground: Fragment {
+    public var cyanBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.cyan
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var lightGrayBackground: Fragment {
+    public var lightGrayBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.lightGray
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var darkGrayBackground: Fragment {
+    public var darkGrayBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.darkGray
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var lightRedBackground: Fragment {
+    public var lightRedBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.lightRed
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var lightGreenBackground: Fragment {
+    public var lightGreenBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.lightGreen
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var lightYellowBackground: Fragment {
+    public var lightYellowBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.lightYellow
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var lightBlueBackground: Fragment {
+    public var lightBlueBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.lightBlue
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var lightMagentaBackground: Fragment {
+    public var lightMagentaBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.lightMagenta
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var lightCyanBackground: Fragment {
+    public var lightCyanBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.lightCyan
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var whiteBackground: Fragment {
+    public var whiteBackground: Fragment {
         var attributes             = AttributeCollection()
         attributes.backgroundColor = BackgroundColor.white
         return Fragment(self, attributeCollection: attributes)

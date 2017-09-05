@@ -10,32 +10,32 @@ import Foundation
 
 extension Fragment {
     
-    var bold: Fragment {
+    public var bold: Fragment {
         self.attributes.styleAttributes.insert(Style.bold)
         return self
     }
     
-    var dimmed: Fragment {
+    public var dimmed: Fragment {
         self.attributes.styleAttributes.insert(Style.dimmed)
         return self
     }
     
-    var underlined: Fragment {
+    public var underlined: Fragment {
         self.attributes.styleAttributes.insert(Style.underlined)
         return self
     }
     
-    var blinking: Fragment {
+    public var blinking: Fragment {
         self.attributes.styleAttributes.insert(Style.blinking)
         return self
     }
     
-    var inverted: Fragment {
+    public var inverted: Fragment {
         self.attributes.styleAttributes.insert(Style.inverted)
         return self
     }
     
-    var hidden: Fragment {
+    public var hidden: Fragment {
         self.attributes.styleAttributes.insert(Style.hidden)
         return self
     }
@@ -43,37 +43,37 @@ extension Fragment {
 
 extension String {
     
-    var bold: Fragment {
+    public var bold: Fragment {
         var attributes = AttributeCollection()
         attributes.styleAttributes.insert(Style.bold)
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var dimmed: Fragment {
+    public var dimmed: Fragment {
         var attributes = AttributeCollection()
         attributes.styleAttributes.insert(Style.dimmed)
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var underlined: Fragment {
+    public var underlined: Fragment {
         var attributes = AttributeCollection()
         attributes.styleAttributes.insert(Style.underlined)
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var blinking: Fragment {
+    public var blinking: Fragment {
         var attributes = AttributeCollection()
         attributes.styleAttributes.insert(Style.blinking)
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var inverted: Fragment {
+    public var inverted: Fragment {
         var attributes = AttributeCollection()
         attributes.styleAttributes.insert(Style.inverted)
         return Fragment(self, attributeCollection: attributes)
     }
     
-    var hidden: Fragment {
+    public var hidden: Fragment {
         var attributes = AttributeCollection()
         attributes.styleAttributes.insert(Style.hidden)
         return Fragment(self, attributeCollection: attributes)
