@@ -10,21 +10,17 @@ import Foundation
 
 public struct AttributeCollection: CustomStringConvertible, CustomDebugStringConvertible, Equatable {
     
-    public static var currentEscapeSequence: EscapeSequence = .default
-    
     public internal(set) var textColor:       TextColor?
     public internal(set) var backgroundColor: BackgroundColor?
     public internal(set) var styleAttributes: Set<Style>
-    public internal(set) var escapeSequence:  EscapeSequence
     
     // ----------------------------------
     //  MARK: - Init -
     //
-    public init(textColor: TextColor? = nil, backgroundColor: BackgroundColor? = nil, styleAttributes: Set<Style> = [], escapeSequence: EscapeSequence? = nil) {
+    public init(textColor: TextColor? = nil, backgroundColor: BackgroundColor? = nil, styleAttributes: Set<Style> = []) {
         self.textColor       = textColor
         self.backgroundColor = backgroundColor
         self.styleAttributes = styleAttributes
-        self.escapeSequence  = escapeSequence ?? AttributeCollection.currentEscapeSequence
     }
     
     public static func clear() -> AttributeCollection {
@@ -55,7 +51,7 @@ public struct AttributeCollection: CustomStringConvertible, CustomDebugStringCon
             attributes.append(backgroundColor)
         }
         
-        return "\(self.escapeSequence)[\(attributes.stringRepresentation)m"
+        return "\(EscapeSequence)[\(attributes.stringRepresentation)m"
     }
     
     public var debugDescription: String {
@@ -70,8 +66,7 @@ extension AttributeCollection {
     public static func ==(lhs: AttributeCollection, rhs: AttributeCollection) -> Bool {
         return lhs.textColor    == rhs.textColor &&
             lhs.backgroundColor == rhs.backgroundColor &&
-            lhs.styleAttributes == rhs.styleAttributes &&
-            lhs.escapeSequence  == rhs.escapeSequence
+            lhs.styleAttributes == rhs.styleAttributes
     }
 }
 

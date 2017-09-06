@@ -15,9 +15,6 @@ class EscapeSequenceTests: XCTestCase {
     //  MARK: - Init -
     //
     func testValues() {
-        let sequence = EscapeSequence.default
-        XCTAssertEqual(sequence.rawValue,         "\u{001B}")
-        XCTAssertEqual(sequence.description,      sequence.rawValue)
-        XCTAssertEqual(sequence.debugDescription, sequence.rawValue)
+        XCTAssertEqual(EscapeSequence, "\u{001B}")
     }
 }

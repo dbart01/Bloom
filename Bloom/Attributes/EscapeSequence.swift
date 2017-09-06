@@ -8,18 +8,4 @@
 
 import Foundation
 
-public enum EscapeSequence: String, CustomStringConvertible, CustomDebugStringConvertible {
-    
-    case `default` = "\u{001B}"
-    
-    // ----------------------------------
-    //  MARK: - Description -
-    //
-    public var description: String {
-        return self.rawValue
-    }
-    
-    public var debugDescription: String {
-        return self.description
-    }
-}
+public let EscapeSequence = "\u{001B}"

@@ -13,6 +13,7 @@
 		9A0D835C1F5F93FD00518AAD /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835B1F5F93FD00518AAD /* StyleTests.swift */; };
 		9A0D835E1F5F947900518AAD /* BackgroundColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */; };
 		9A0D83601F5F954000518AAD /* TextColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835F1F5F954000518AAD /* TextColorTests.swift */; };
+		9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83611F60124E00518AAD /* FragmentTests.swift */; };
 		9A38277E1F5D9DCF0085363F /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
 		9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */; };
 		9A3827851F5D9DCF0085363F /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -56,6 +57,7 @@
 		9A0D835B1F5F93FD00518AAD /* StyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTests.swift; sourceTree = "<group>"; };
 		9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorTests.swift; sourceTree = "<group>"; };
 		9A0D835F1F5F954000518AAD /* TextColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorTests.swift; sourceTree = "<group>"; };
+		9A0D83611F60124E00518AAD /* FragmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentTests.swift; sourceTree = "<group>"; };
 		9A3827741F5D9DCF0085363F /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827771F5D9DCF0085363F /* Bloom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bloom.h; sourceTree = "<group>"; };
 		9A3827781F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 		9A3827811F5D9DCF0085363F /* BloomTests */ = {
 			isa = PBXGroup;
 			children = (
+				9A0D83611F60124E00518AAD /* FragmentTests.swift */,
 				9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */,
 				9A0D83561F5F91C000518AAD /* Attributes */,
 				9A3827841F5D9DCF0085363F /* Info.plist */,
@@ -348,6 +351,7 @@
 				9A0D83551F5F8DF700518AAD /* AttributeCollectionTests.swift in Sources */,
 				9A0D83601F5F954000518AAD /* TextColorTests.swift in Sources */,
 				9A0D835C1F5F93FD00518AAD /* StyleTests.swift in Sources */,
+				9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */,
 				9A0D835A1F5F932B00518AAD /* EscapeSequenceTests.swift in Sources */,
 				9A0D83581F5F925700518AAD /* AttributeTests.swift in Sources */,
 			);

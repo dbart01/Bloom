@@ -8,14 +8,14 @@
 
 import Foundation
 
-public final class Fragment: CustomStringConvertible, CustomDebugStringConvertible, ExpressibleByStringLiteral {
+public final class Fragment: CustomStringConvertible, CustomDebugStringConvertible, ExpressibleByStringLiteral, Equatable {
     
     public let content:     String
     public let shouldClear: Bool
     
     public internal(set) var attributes: AttributeCollection
     
-    private var parent: Fragment?
+    internal private(set) var parent: Fragment?
     
     // ----------------------------------
     //  MARK: - Init -
@@ -29,30 +29,17 @@ public final class Fragment: CustomStringConvertible, CustomDebugStringConvertib
     // ----------------------------------
     //  MARK: - ExpressibleByStringLiteral -
     //
-    public required init(stringLiteral value: StringLiteralType) {
-        self.content     = String(value)
-        self.attributes  = AttributeCollection()
-        self.shouldClear = true
-    }
-    
-    public required init(unicodeScalarLiteral value: UnicodeScalarLiteralType) {
-        self.content     = String(value)
-        self.attributes  = AttributeCollection()
-        self.shouldClear = true
-    }
-    
-    public required init(extendedGraphemeClusterLiteral value: ExtendedGraphemeClusterLiteralType) {
-        self.content     = String(value)
-        self.attributes  = AttributeCollection()
-        self.shouldClear = true
+    public convenience init(stringLiteral value: StringLiteralType) {
+        self.init(value)
     }
     
     // ----------------------------------
     //  MARK: - Fragments -
     //
     internal func appending(_ fragment: Fragment) -> Fragment {
-        fragment.parent = self
-        return fragment
+        let copy    = Fragment(fragment.content, attributeCollection: fragment.attributes, shouldClear: fragment.shouldClear)
+        copy.parent = self
+        return copy
     }
     
     // ----------------------------------
@@ -72,15 +59,26 @@ public final class Fragment: CustomStringConvertible, CustomDebugStringConvertib
             description = "\(self.attributes)\(self.content)\(clearString)"
         }
         
-        if let parentDescription = self.parent?.description {
-            return "\(parentDescription)\(description)"
-        } else {
+        guard let parentDescription = self.parent?.description else {
             return description
         }
+        return "\(parentDescription)\(description)"
     }
     
     public var debugDescription: String {
         return self.description
+    }
+}
+
+// ----------------------------------
+//  MARK: - Equatable -
+//
+extension Fragment {
+    public static func ==(lhs: Fragment, rhs: Fragment) -> Bool {
+        return lhs.content  == rhs.content &&
+            lhs.shouldClear == rhs.shouldClear &&
+            lhs.attributes  == rhs.attributes &&
+            lhs.parent      == rhs.parent
     }
 }
 

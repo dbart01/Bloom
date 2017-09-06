@@ -15,16 +15,15 @@ class AttributeCollectionTests: XCTestCase {
     //  MARK: - Init -
     //
     func testInit() {
-        let content          = "Error message"
-        var attributes       = AttributeCollection()
-        attributes.textColor = .blue
-        attributes.styleAttributes.insert(.blinking)
+        let attributes = AttributeCollection(
+            textColor:       .blue,
+            backgroundColor: .red,
+            styleAttributes: [.blinking]
+        )
         
-        let fragment   = Fragment(content, attributeCollection: attributes, shouldClear: false)
-        
-        XCTAssertEqual(fragment.content,     content)
-        XCTAssertEqual(fragment.attributes,  attributes)
-        XCTAssertEqual(fragment.shouldClear, false)
+        XCTAssertEqual(attributes.textColor,       .blue)
+        XCTAssertEqual(attributes.backgroundColor, .red)
+        XCTAssertEqual(attributes.styleAttributes, [.blinking])
     }
     
     func testClearAttribute() {
