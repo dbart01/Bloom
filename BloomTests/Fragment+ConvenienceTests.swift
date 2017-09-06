@@ -1,5 +1,5 @@
 //
-//  Fragment+ColorTests.swift
+//  Fragment+ConvenienceTests.swift
 //  BloomTests
 //
 //  Created by Dima Bart on 2017-09-04.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Bloom
 
-class Fragment_ColorTests: XCTestCase {
+class Fragment_ConvenienceTests: XCTestCase {
     
     // ----------------------------------
     //  MARK: - Background Colors -

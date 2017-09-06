@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct AttributeCollection: CustomStringConvertible, CustomDebugStringConvertible {
+public struct AttributeCollection: CustomStringConvertible, CustomDebugStringConvertible, Equatable {
     
     public static var currentEscapeSequence: EscapeSequence = .default
     
@@ -60,6 +60,18 @@ public struct AttributeCollection: CustomStringConvertible, CustomDebugStringCon
     
     public var debugDescription: String {
         return self.description
+    }
+}
+
+// ----------------------------------
+//  MARK: - Equatable -
+//
+extension AttributeCollection {
+    public static func ==(lhs: AttributeCollection, rhs: AttributeCollection) -> Bool {
+        return lhs.textColor    == rhs.textColor &&
+            lhs.backgroundColor == rhs.backgroundColor &&
+            lhs.styleAttributes == rhs.styleAttributes &&
+            lhs.escapeSequence  == rhs.escapeSequence
     }
 }
 

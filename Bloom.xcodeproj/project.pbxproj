@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0D83551F5F8DF700518AAD /* AttributeCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83541F5F8DF700518AAD /* AttributeCollectionTests.swift */; };
 		9A38277E1F5D9DCF0085363F /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
 		9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */; };
 		9A3827851F5D9DCF0085363F /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0D83541F5F8DF700518AAD /* AttributeCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCollectionTests.swift; sourceTree = "<group>"; };
 		9A3827741F5D9DCF0085363F /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827771F5D9DCF0085363F /* Bloom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bloom.h; sourceTree = "<group>"; };
 		9A3827781F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A0D83561F5F91C000518AAD /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				9A0D83541F5F8DF700518AAD /* AttributeCollectionTests.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
 		9A38276A1F5D9DCF0085363F = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */,
+				9A0D83561F5F91C000518AAD /* Attributes */,
 				9A3827841F5D9DCF0085363F /* Info.plist */,
 			);
 			path = BloomTests;
@@ -318,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */,
+				9A0D83551F5F8DF700518AAD /* AttributeCollectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
