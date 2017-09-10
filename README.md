@@ -1,6 +1,7 @@
 # Bloom
 
 [![Build Status](https://www.bitrise.io/app/dc82ca461a4db774/status.svg?token=wqNkKz787M3_5C-54cMLvQ)](https://www.bitrise.io/app/dc82ca461a4db774)
+[![codecov](https://codecov.io/gh/dbart01/Bloom/branch/master/graph/badge.svg)](https://codecov.io/gh/dbart01/Bloom)
 [![GitHub release](https://img.shields.io/github/release/dbart01/Bloom.svg?style=flat)](https://github.com/dbart01/Bloom/releases/latest)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](https://github.com/dbart01/Bloom/blob/master/LICENSE.txt)
