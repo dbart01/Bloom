@@ -7,8 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0D83551F5F8DF700518AAD /* AttributeCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83541F5F8DF700518AAD /* AttributeCollectionTests.swift */; };
+		9A0D83581F5F925700518AAD /* AttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83571F5F925700518AAD /* AttributeTests.swift */; };
+		9A0D835A1F5F932B00518AAD /* EscapeSequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83591F5F932B00518AAD /* EscapeSequenceTests.swift */; };
+		9A0D835C1F5F93FD00518AAD /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835B1F5F93FD00518AAD /* StyleTests.swift */; };
+		9A0D835E1F5F947900518AAD /* BackgroundColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */; };
+		9A0D83601F5F954000518AAD /* TextColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835F1F5F954000518AAD /* TextColorTests.swift */; };
+		9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83611F60124E00518AAD /* FragmentTests.swift */; };
 		9A38277E1F5D9DCF0085363F /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
-		9A3827831F5D9DCF0085363F /* BloomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* BloomTests.swift */; };
+		9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */; };
 		9A3827851F5D9DCF0085363F /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A38278F1F5D9E1C0085363F /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38278E1F5D9E1C0085363F /* Fragment.swift */; };
 		9A3827931F5DA4410085363F /* EscapeSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827921F5DA4410085363F /* EscapeSequence.swift */; };
@@ -17,6 +24,20 @@
 		9A3827991F5DE19D0085363F /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827981F5DE19D0085363F /* Attribute.swift */; };
 		9A38279D1F5DE27D0085363F /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279C1F5DE27D0085363F /* Style.swift */; };
 		9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279F1F5DE8050085363F /* AttributeCollection.swift */; };
+		9A65F9BD1F5E444E00380FA1 /* Fragment+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */; };
+		9A65F9BE1F5E444E00380FA1 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827981F5DE19D0085363F /* Attribute.swift */; };
+		9A65F9BF1F5E444E00380FA1 /* Fragment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38278E1F5D9E1C0085363F /* Fragment.swift */; };
+		9A65F9C01F5E444E00380FA1 /* Fragment+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */; };
+		9A65F9C11F5E444E00380FA1 /* TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827941F5DA4610085363F /* TextColor.swift */; };
+		9A65F9C21F5E444E00380FA1 /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827961F5DA46C0085363F /* BackgroundColor.swift */; };
+		9A65F9C31F5E444E00380FA1 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279C1F5DE27D0085363F /* Style.swift */; };
+		9A65F9C41F5E444E00380FA1 /* EscapeSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827921F5DA4410085363F /* EscapeSequence.swift */; };
+		9A65F9C51F5E444E00380FA1 /* Fragment+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */; };
+		9A65F9C61F5E444E00380FA1 /* AttributeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279F1F5DE8050085363F /* AttributeCollection.swift */; };
+		9A65F9C91F5E444E00380FA1 /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */; };
+		9AE3835E1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */; };
+		9AE383601F5E0493007B2E78 /* Fragment+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,11 +51,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0D83541F5F8DF700518AAD /* AttributeCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCollectionTests.swift; sourceTree = "<group>"; };
+		9A0D83571F5F925700518AAD /* AttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeTests.swift; sourceTree = "<group>"; };
+		9A0D83591F5F932B00518AAD /* EscapeSequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeSequenceTests.swift; sourceTree = "<group>"; };
+		9A0D835B1F5F93FD00518AAD /* StyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleTests.swift; sourceTree = "<group>"; };
+		9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorTests.swift; sourceTree = "<group>"; };
+		9A0D835F1F5F954000518AAD /* TextColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorTests.swift; sourceTree = "<group>"; };
+		9A0D83611F60124E00518AAD /* FragmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentTests.swift; sourceTree = "<group>"; };
 		9A3827741F5D9DCF0085363F /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827771F5D9DCF0085363F /* Bloom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bloom.h; sourceTree = "<group>"; };
 		9A3827781F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A38277D1F5D9DCF0085363F /* BloomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A3827821F5D9DCF0085363F /* BloomTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloomTests.swift; sourceTree = "<group>"; };
+		9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+ConvenienceTests.swift"; sourceTree = "<group>"; };
 		9A3827841F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A38278E1F5D9E1C0085363F /* Fragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
 		9A3827921F5DA4410085363F /* EscapeSequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EscapeSequence.swift; sourceTree = "<group>"; };
@@ -43,6 +71,10 @@
 		9A3827981F5DE19D0085363F /* Attribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attribute.swift; sourceTree = "<group>"; };
 		9A38279C1F5DE27D0085363F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		9A38279F1F5DE8050085363F /* AttributeCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCollection.swift; sourceTree = "<group>"; };
+		9A65F9CE1F5E444E00380FA1 /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+TextColor.swift"; sourceTree = "<group>"; };
+		9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+BackgroundColor.swift"; sourceTree = "<group>"; };
+		9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+Styles.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +93,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A65F9C71F5E444E00380FA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A0D83561F5F91C000518AAD /* Attributes */ = {
+			isa = PBXGroup;
+			children = (
+				9A0D835F1F5F954000518AAD /* TextColorTests.swift */,
+				9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */,
+				9A0D835B1F5F93FD00518AAD /* StyleTests.swift */,
+				9A0D83571F5F925700518AAD /* AttributeTests.swift */,
+				9A0D83541F5F8DF700518AAD /* AttributeCollectionTests.swift */,
+				9A0D83591F5F932B00518AAD /* EscapeSequenceTests.swift */,
+			);
+			path = Attributes;
+			sourceTree = "<group>";
+		};
 		9A38276A1F5D9DCF0085363F = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3827741F5D9DCF0085363F /* Bloom.framework */,
+				9A65F9CE1F5E444E00380FA1 /* Bloom.framework */,
 				9A38277D1F5D9DCF0085363F /* BloomTests.xctest */,
 			);
 			name = Products;
@@ -87,6 +140,7 @@
 			children = (
 				9A3827771F5D9DCF0085363F /* Bloom.h */,
 				9A38278E1F5D9E1C0085363F /* Fragment.swift */,
+				9AE383561F5DF296007B2E78 /* Conveniences */,
 				9A38279E1F5DE5DB0085363F /* Attributes */,
 				9A3827781F5D9DCF0085363F /* Info.plist */,
 			);
@@ -96,7 +150,9 @@
 		9A3827811F5D9DCF0085363F /* BloomTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A3827821F5D9DCF0085363F /* BloomTests.swift */,
+				9A0D83611F60124E00518AAD /* FragmentTests.swift */,
+				9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */,
+				9A0D83561F5F91C000518AAD /* Attributes */,
 				9A3827841F5D9DCF0085363F /* Info.plist */,
 			);
 			path = BloomTests;
@@ -115,6 +171,16 @@
 			path = Attributes;
 			sourceTree = "<group>";
 		};
+		9AE383561F5DF296007B2E78 /* Conveniences */ = {
+			isa = PBXGroup;
+			children = (
+				9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */,
+				9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */,
+				9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */,
+			);
+			path = Conveniences;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -126,12 +192,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A65F9C81F5E444E00380FA1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A65F9C91F5E444E00380FA1 /* Bloom.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9A3827731F5D9DCF0085363F /* Bloom */ = {
+		9A3827731F5D9DCF0085363F /* Bloom iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A3827881F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "Bloom" */;
+			buildConfigurationList = 9A3827881F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "Bloom iOS" */;
 			buildPhases = (
 				9A38276F1F5D9DCF0085363F /* Sources */,
 				9A3827701F5D9DCF0085363F /* Frameworks */,
@@ -142,7 +216,7 @@
 			);
 			dependencies = (
 			);
-			name = Bloom;
+			name = "Bloom iOS";
 			productName = Bloom;
 			productReference = 9A3827741F5D9DCF0085363F /* Bloom.framework */;
 			productType = "com.apple.product-type.framework";
@@ -165,6 +239,24 @@
 			productReference = 9A38277D1F5D9DCF0085363F /* BloomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9A65F9BB1F5E444E00380FA1 /* Bloom macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A65F9CB1F5E444E00380FA1 /* Build configuration list for PBXNativeTarget "Bloom macOS" */;
+			buildPhases = (
+				9A65F9BC1F5E444E00380FA1 /* Sources */,
+				9A65F9C71F5E444E00380FA1 /* Frameworks */,
+				9A65F9C81F5E444E00380FA1 /* Headers */,
+				9A65F9CA1F5E444E00380FA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bloom macOS";
+			productName = Bloom;
+			productReference = 9A65F9CE1F5E444E00380FA1 /* Bloom.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -178,11 +270,14 @@
 					9A3827731F5D9DCF0085363F = {
 						CreatedOnToolsVersion = 9.0;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9A38277C1F5D9DCF0085363F = {
 						CreatedOnToolsVersion = 9.0;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+					};
+					9A65F9BB1F5E444E00380FA1 = {
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -198,7 +293,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9A3827731F5D9DCF0085363F /* Bloom */,
+				9A3827731F5D9DCF0085363F /* Bloom iOS */,
+				9A65F9BB1F5E444E00380FA1 /* Bloom macOS */,
 				9A38277C1F5D9DCF0085363F /* BloomTests */,
 			);
 		};
@@ -219,6 +315,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9A65F9CA1F5E444E00380FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -226,12 +329,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE3835E1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift in Sources */,
 				9A3827991F5DE19D0085363F /* Attribute.swift in Sources */,
 				9A38278F1F5D9E1C0085363F /* Fragment.swift in Sources */,
+				9AE383601F5E0493007B2E78 /* Fragment+Styles.swift in Sources */,
 				9A3827951F5DA4610085363F /* TextColor.swift in Sources */,
 				9A3827971F5DA46C0085363F /* BackgroundColor.swift in Sources */,
 				9A38279D1F5DE27D0085363F /* Style.swift in Sources */,
 				9A3827931F5DA4410085363F /* EscapeSequence.swift in Sources */,
+				9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */,
 				9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +346,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A3827831F5D9DCF0085363F /* BloomTests.swift in Sources */,
+				9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */,
+				9A0D835E1F5F947900518AAD /* BackgroundColorTests.swift in Sources */,
+				9A0D83551F5F8DF700518AAD /* AttributeCollectionTests.swift in Sources */,
+				9A0D83601F5F954000518AAD /* TextColorTests.swift in Sources */,
+				9A0D835C1F5F93FD00518AAD /* StyleTests.swift in Sources */,
+				9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */,
+				9A0D835A1F5F932B00518AAD /* EscapeSequenceTests.swift in Sources */,
+				9A0D83581F5F925700518AAD /* AttributeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A65F9BC1F5E444E00380FA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A65F9BD1F5E444E00380FA1 /* Fragment+BackgroundColor.swift in Sources */,
+				9A65F9BE1F5E444E00380FA1 /* Attribute.swift in Sources */,
+				9A65F9BF1F5E444E00380FA1 /* Fragment.swift in Sources */,
+				9A65F9C01F5E444E00380FA1 /* Fragment+Styles.swift in Sources */,
+				9A65F9C11F5E444E00380FA1 /* TextColor.swift in Sources */,
+				9A65F9C21F5E444E00380FA1 /* BackgroundColor.swift in Sources */,
+				9A65F9C31F5E444E00380FA1 /* Style.swift in Sources */,
+				9A65F9C41F5E444E00380FA1 /* EscapeSequence.swift in Sources */,
+				9A65F9C51F5E444E00380FA1 /* Fragment+TextColor.swift in Sources */,
+				9A65F9C61F5E444E00380FA1 /* AttributeCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +379,7 @@
 /* Begin PBXTargetDependency section */
 		9A3827801F5D9DCF0085363F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9A3827731F5D9DCF0085363F /* Bloom */;
+			target = 9A3827731F5D9DCF0085363F /* Bloom iOS */;
 			targetProxy = 9A38277F1F5D9DCF0085363F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -373,17 +503,20 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MK88G5Q6ZN;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Bloom/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.Bloom;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Bloom;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -396,17 +529,20 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MK88G5Q6ZN;
+				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Bloom/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.Bloom;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Bloom;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -417,12 +553,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MK88G5Q6ZN;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BloomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.BloomTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,12 +571,68 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MK88G5Q6ZN;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BloomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.BloomTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9A65F9CC1F5E444E00380FA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Bloom/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.Bloom;
+				PRODUCT_NAME = Bloom;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9A65F9CD1F5E444E00380FA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Bloom/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.Bloom;
+				PRODUCT_NAME = Bloom;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,7 +650,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A3827881F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "Bloom" */ = {
+		9A3827881F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "Bloom iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A3827891F5D9DCF0085363F /* Debug */,
@@ -469,6 +664,15 @@
 			buildConfigurations = (
 				9A38278C1F5D9DCF0085363F /* Debug */,
 				9A38278D1F5D9DCF0085363F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A65F9CB1F5E444E00380FA1 /* Build configuration list for PBXNativeTarget "Bloom macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A65F9CC1F5E444E00380FA1 /* Debug */,
+				9A65F9CD1F5E444E00380FA1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

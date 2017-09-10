@@ -1,6 +1,6 @@
 //
-//  Bloom.h
-//  Bloom
+//  main.swift
+//  BloomSample
 //
 //  The MIT License (MIT)
 //
@@ -25,14 +25,21 @@
 //  SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+import Bloom
 
-//! Project version number for Bloom.
-FOUNDATION_EXPORT double BloomVersionNumber;
-
-//! Project version string for Bloom.
-FOUNDATION_EXPORT const unsigned char BloomVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Bloom/PublicHeader.h>
-
-
+print("")
+sleep(1)
+print("▸ Building sample application...".blinking.bold.blueText)
+sleep(1)
+print("▸ Compiling ".yellowText + "main.swift")
+sleep(1)
+print("▸ Linking...".greenText)
+sleep(1)
+print("▸ " + "Something went wrong.".redBackground.underlined + " Unable to link dependencies.")
+sleep(1)
+print("▸ Aborting build.".dimmed)
+sleep(1)
+print("▸ " + "Build failed.".bold.inverted)
+sleep(1)
+print("")
+sleep(1)

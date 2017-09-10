@@ -1,6 +1,6 @@
 //
-//  Bloom.h
-//  Bloom
+//  EscapeSequenceTests.swift
+//  BloomTests
 //
 //  The MIT License (MIT)
 //
@@ -25,14 +25,15 @@
 //  SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+import XCTest
+@testable import Bloom
 
-//! Project version number for Bloom.
-FOUNDATION_EXPORT double BloomVersionNumber;
-
-//! Project version string for Bloom.
-FOUNDATION_EXPORT const unsigned char BloomVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Bloom/PublicHeader.h>
-
-
+class EscapeSequenceTests: XCTestCase {
+    
+    // ----------------------------------
+    //  MARK: - Init -
+    //
+    func testValues() {
+        XCTAssertEqual(EscapeSequence, "\u{001B}")
+    }
+}

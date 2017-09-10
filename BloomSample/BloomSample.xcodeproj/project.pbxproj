@@ -1,0 +1,380 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9A54A7DC1F5EC02B003EE605 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A54A7DB1F5EC02B003EE605 /* main.swift */; };
+		9A7AD06D1F5EC12B00C93366 /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD22EBC1F5EC11100B4D397 /* Bloom.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9A7AD0671F5EC12600C93366 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AD22EB31F5EC11100B4D397 /* Bloom.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A65F9BB1F5E444E00380FA1;
+			remoteInfo = "Bloom macOS";
+		};
+		9AD22EB91F5EC11100B4D397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AD22EB31F5EC11100B4D397 /* Bloom.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A3827741F5D9DCF0085363F;
+			remoteInfo = "Bloom iOS";
+		};
+		9AD22EBB1F5EC11100B4D397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AD22EB31F5EC11100B4D397 /* Bloom.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A65F9CE1F5E444E00380FA1;
+			remoteInfo = "Bloom macOS";
+		};
+		9AD22EBD1F5EC11100B4D397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9AD22EB31F5EC11100B4D397 /* Bloom.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9A38277D1F5D9DCF0085363F;
+			remoteInfo = BloomTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9A54A7D61F5EC02B003EE605 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9A54A7D81F5EC02B003EE605 /* BloomSample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BloomSample; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A54A7DB1F5EC02B003EE605 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		9AD22EB31F5EC11100B4D397 /* Bloom.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Bloom.xcodeproj; path = ../Bloom.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9A54A7D51F5EC02B003EE605 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A7AD06D1F5EC12B00C93366 /* Bloom.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9A54A7CF1F5EC02B003EE605 = {
+			isa = PBXGroup;
+			children = (
+				9AD22EB21F5EC10500B4D397 /* Dependencies */,
+				9A54A7DA1F5EC02B003EE605 /* BloomSample */,
+				9A54A7D91F5EC02B003EE605 /* Products */,
+				9A7AD06C1F5EC12B00C93366 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9A54A7D91F5EC02B003EE605 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A54A7D81F5EC02B003EE605 /* BloomSample */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9A54A7DA1F5EC02B003EE605 /* BloomSample */ = {
+			isa = PBXGroup;
+			children = (
+				9A54A7DB1F5EC02B003EE605 /* main.swift */,
+			);
+			path = BloomSample;
+			sourceTree = "<group>";
+		};
+		9A7AD06C1F5EC12B00C93366 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9AD22EB21F5EC10500B4D397 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				9AD22EB31F5EC11100B4D397 /* Bloom.xcodeproj */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		9AD22EB41F5EC11100B4D397 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9AD22EBA1F5EC11100B4D397 /* Bloom.framework */,
+				9AD22EBC1F5EC11100B4D397 /* Bloom.framework */,
+				9AD22EBE1F5EC11100B4D397 /* BloomTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9A54A7D71F5EC02B003EE605 /* BloomSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A54A7DF1F5EC02B003EE605 /* Build configuration list for PBXNativeTarget "BloomSample" */;
+			buildPhases = (
+				9A54A7D41F5EC02B003EE605 /* Sources */,
+				9A54A7D51F5EC02B003EE605 /* Frameworks */,
+				9A54A7D61F5EC02B003EE605 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9A7AD0681F5EC12600C93366 /* PBXTargetDependency */,
+			);
+			name = BloomSample;
+			productName = BloomSample;
+			productReference = 9A54A7D81F5EC02B003EE605 /* BloomSample */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9A54A7D01F5EC02B003EE605 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Dima Bart";
+				TargetAttributes = {
+					9A54A7D71F5EC02B003EE605 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9A54A7D31F5EC02B003EE605 /* Build configuration list for PBXProject "BloomSample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9A54A7CF1F5EC02B003EE605;
+			productRefGroup = 9A54A7D91F5EC02B003EE605 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9AD22EB41F5EC11100B4D397 /* Products */;
+					ProjectRef = 9AD22EB31F5EC11100B4D397 /* Bloom.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				9A54A7D71F5EC02B003EE605 /* BloomSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9AD22EBA1F5EC11100B4D397 /* Bloom.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Bloom.framework;
+			remoteRef = 9AD22EB91F5EC11100B4D397 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AD22EBC1F5EC11100B4D397 /* Bloom.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Bloom.framework;
+			remoteRef = 9AD22EBB1F5EC11100B4D397 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9AD22EBE1F5EC11100B4D397 /* BloomTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BloomTests.xctest;
+			remoteRef = 9AD22EBD1F5EC11100B4D397 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9A54A7D41F5EC02B003EE605 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A54A7DC1F5EC02B003EE605 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9A7AD0681F5EC12600C93366 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Bloom macOS";
+			targetProxy = 9A7AD0671F5EC12600C93366 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9A54A7DD1F5EC02B003EE605 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9A54A7DE1F5EC02B003EE605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		9A54A7E01F5EC02B003EE605 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		9A54A7E11F5EC02B003EE605 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9A54A7D31F5EC02B003EE605 /* Build configuration list for PBXProject "BloomSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A54A7DD1F5EC02B003EE605 /* Debug */,
+				9A54A7DE1F5EC02B003EE605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9A54A7DF1F5EC02B003EE605 /* Build configuration list for PBXNativeTarget "BloomSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A54A7E01F5EC02B003EE605 /* Debug */,
+				9A54A7E11F5EC02B003EE605 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9A54A7D01F5EC02B003EE605 /* Project object */;
+}

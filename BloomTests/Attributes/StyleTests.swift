@@ -1,6 +1,6 @@
 //
-//  Bloom.h
-//  Bloom
+//  StyleTests.swift
+//  BloomTests
 //
 //  The MIT License (MIT)
 //
@@ -25,14 +25,21 @@
 //  SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+import XCTest
+@testable import Bloom
 
-//! Project version number for Bloom.
-FOUNDATION_EXPORT double BloomVersionNumber;
-
-//! Project version string for Bloom.
-FOUNDATION_EXPORT const unsigned char BloomVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Bloom/PublicHeader.h>
-
-
+class StyleTests: XCTestCase {
+    
+    // ----------------------------------
+    //  MARK: - Init -
+    //
+    func testValues() {
+        XCTAssertEqual(Style.clear.rawValue,      0)
+        XCTAssertEqual(Style.bold.rawValue,       1)
+        XCTAssertEqual(Style.dimmed.rawValue,     2)
+        XCTAssertEqual(Style.underlined.rawValue, 4)
+        XCTAssertEqual(Style.blinking.rawValue,   5)
+        XCTAssertEqual(Style.inverted.rawValue,   7)
+        XCTAssertEqual(Style.hidden.rawValue,     8)
+    }
+}

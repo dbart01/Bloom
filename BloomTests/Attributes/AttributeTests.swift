@@ -1,6 +1,6 @@
 //
-//  Bloom.h
-//  Bloom
+//  AttributeTests.swift
+//  BloomTests
 //
 //  The MIT License (MIT)
 //
@@ -25,14 +25,23 @@
 //  SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
+import XCTest
+@testable import Bloom
 
-//! Project version number for Bloom.
-FOUNDATION_EXPORT double BloomVersionNumber;
+class AttributeTests: XCTestCase {
 
-//! Project version string for Bloom.
-FOUNDATION_EXPORT const unsigned char BloomVersionString[];
+    // ----------------------------------
+    //  MARK: - Protocol Extension -
+    //
+    func testDefaultValue() {
+        XCTAssertEqual(TestAttribute.one.value,   1)
+        XCTAssertEqual(TestAttribute.two.value,   2)
+        XCTAssertEqual(TestAttribute.three.value, 3)
+    }
+}
 
-// In this header, you should import all the public headers of your framework using statements like #import <Bloom/PublicHeader.h>
-
-
+private enum TestAttribute: Int {
+    case one = 1
+    case two
+    case three
+}
