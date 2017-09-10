@@ -1,7 +1,3 @@
-//
-//  Bloom.h
-//  Bloom
-//
 //  The MIT License (MIT)
 //
 //  Copyright (c) 2017 Dima Bart
@@ -23,16 +19,4 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-//
-
-#import <Foundation/Foundation.h>
-
-//! Project version number for Bloom.
-FOUNDATION_EXPORT double BloomVersionNumber;
-
-//! Project version string for Bloom.
-FOUNDATION_EXPORT const unsigned char BloomVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <Bloom/PublicHeader.h>
-
-
+//  
