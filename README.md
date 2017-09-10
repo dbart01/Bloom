@@ -10,7 +10,7 @@ print("▸ " + "Something went wrong.".redBackground.underlined + " Unable to li
 print("▸ Aborting build.".dimmed)
 print("▸ " + "Build failed.".bold.inverted) 
 ```
-
+![bloom](https://user-images.githubusercontent.com/5244861/30249922-e43339bc-9613-11e7-8f1f-e994d209533a.gif)
 
 ## Installation
 
