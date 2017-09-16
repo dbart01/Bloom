@@ -14,6 +14,8 @@
 		9A0D835E1F5F947900518AAD /* BackgroundColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */; };
 		9A0D83601F5F954000518AAD /* TextColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835F1F5F954000518AAD /* TextColorTests.swift */; };
 		9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83611F60124E00518AAD /* FragmentTests.swift */; };
+		9A11EA771F6A9D080051F987 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA761F6A9D080051F987 /* File.swift */; };
+		9A11EA791F6AA1D60051F987 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA781F6AA1D60051F987 /* FileTests.swift */; };
 		9A38277E1F5D9DCF0085363F /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
 		9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */; };
 		9A3827851F5D9DCF0085363F /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,6 +37,8 @@
 		9A65F9C51F5E444E00380FA1 /* Fragment+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */; };
 		9A65F9C61F5E444E00380FA1 /* AttributeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279F1F5DE8050085363F /* AttributeCollection.swift */; };
 		9A65F9C91F5E444E00380FA1 /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9A8E12E81F6B1C3300963253 /* String+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E12E71F6B1C3300963253 /* String+Path.swift */; };
+		9A8E12EA1F6B1C5000963253 /* String+PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E12E91F6B1C5000963253 /* String+PathTests.swift */; };
 		9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */; };
 		9AE3835E1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */; };
 		9AE383601F5E0493007B2E78 /* Fragment+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */; };
@@ -58,6 +62,8 @@
 		9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColorTests.swift; sourceTree = "<group>"; };
 		9A0D835F1F5F954000518AAD /* TextColorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorTests.swift; sourceTree = "<group>"; };
 		9A0D83611F60124E00518AAD /* FragmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentTests.swift; sourceTree = "<group>"; };
+		9A11EA761F6A9D080051F987 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		9A11EA781F6AA1D60051F987 /* FileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTests.swift; sourceTree = "<group>"; };
 		9A3827741F5D9DCF0085363F /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827771F5D9DCF0085363F /* Bloom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bloom.h; sourceTree = "<group>"; };
 		9A3827781F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +78,8 @@
 		9A38279C1F5DE27D0085363F /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		9A38279F1F5DE8050085363F /* AttributeCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeCollection.swift; sourceTree = "<group>"; };
 		9A65F9CE1F5E444E00380FA1 /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A8E12E71F6B1C3300963253 /* String+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
+		9A8E12E91F6B1C5000963253 /* String+PathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PathTests.swift"; sourceTree = "<group>"; };
 		9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+TextColor.swift"; sourceTree = "<group>"; };
 		9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+BackgroundColor.swift"; sourceTree = "<group>"; };
 		9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+Styles.swift"; sourceTree = "<group>"; };
@@ -139,9 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				9A3827771F5D9DCF0085363F /* Bloom.h */,
-				9A38278E1F5D9E1C0085363F /* Fragment.swift */,
-				9AE383561F5DF296007B2E78 /* Conveniences */,
-				9A38279E1F5DE5DB0085363F /* Attributes */,
+				9AC2EFD81F6D77860037E0D7 /* File Operations */,
+				9AC2EFD91F6D779C0037E0D7 /* Colorizer */,
 				9A3827781F5D9DCF0085363F /* Info.plist */,
 			);
 			path = Bloom;
@@ -150,9 +157,8 @@
 		9A3827811F5D9DCF0085363F /* BloomTests */ = {
 			isa = PBXGroup;
 			children = (
-				9A0D83611F60124E00518AAD /* FragmentTests.swift */,
-				9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */,
-				9A0D83561F5F91C000518AAD /* Attributes */,
+				9AC2EFDA1F6D77A50037E0D7 /* File Operations */,
+				9AC2EFDB1F6D77AE0037E0D7 /* Colorizer */,
 				9A3827841F5D9DCF0085363F /* Info.plist */,
 			);
 			path = BloomTests;
@@ -169,6 +175,44 @@
 				9A3827921F5DA4410085363F /* EscapeSequence.swift */,
 			);
 			path = Attributes;
+			sourceTree = "<group>";
+		};
+		9AC2EFD81F6D77860037E0D7 /* File Operations */ = {
+			isa = PBXGroup;
+			children = (
+				9A11EA761F6A9D080051F987 /* File.swift */,
+				9A8E12E71F6B1C3300963253 /* String+Path.swift */,
+			);
+			path = "File Operations";
+			sourceTree = "<group>";
+		};
+		9AC2EFD91F6D779C0037E0D7 /* Colorizer */ = {
+			isa = PBXGroup;
+			children = (
+				9A38278E1F5D9E1C0085363F /* Fragment.swift */,
+				9AE383561F5DF296007B2E78 /* Conveniences */,
+				9A38279E1F5DE5DB0085363F /* Attributes */,
+			);
+			path = Colorizer;
+			sourceTree = "<group>";
+		};
+		9AC2EFDA1F6D77A50037E0D7 /* File Operations */ = {
+			isa = PBXGroup;
+			children = (
+				9A11EA781F6AA1D60051F987 /* FileTests.swift */,
+				9A8E12E91F6B1C5000963253 /* String+PathTests.swift */,
+			);
+			path = "File Operations";
+			sourceTree = "<group>";
+		};
+		9AC2EFDB1F6D77AE0037E0D7 /* Colorizer */ = {
+			isa = PBXGroup;
+			children = (
+				9A0D83611F60124E00518AAD /* FragmentTests.swift */,
+				9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */,
+				9A0D83561F5F91C000518AAD /* Attributes */,
+			);
+			path = Colorizer;
 			sourceTree = "<group>";
 		};
 		9AE383561F5DF296007B2E78 /* Conveniences */ = {
@@ -333,12 +377,14 @@
 				9A3827991F5DE19D0085363F /* Attribute.swift in Sources */,
 				9A38278F1F5D9E1C0085363F /* Fragment.swift in Sources */,
 				9AE383601F5E0493007B2E78 /* Fragment+Styles.swift in Sources */,
+				9A11EA771F6A9D080051F987 /* File.swift in Sources */,
 				9A3827951F5DA4610085363F /* TextColor.swift in Sources */,
 				9A3827971F5DA46C0085363F /* BackgroundColor.swift in Sources */,
 				9A38279D1F5DE27D0085363F /* Style.swift in Sources */,
 				9A3827931F5DA4410085363F /* EscapeSequence.swift in Sources */,
 				9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */,
 				9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */,
+				9A8E12E81F6B1C3300963253 /* String+Path.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,10 +392,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A11EA791F6AA1D60051F987 /* FileTests.swift in Sources */,
 				9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */,
 				9A0D835E1F5F947900518AAD /* BackgroundColorTests.swift in Sources */,
 				9A0D83551F5F8DF700518AAD /* AttributeCollectionTests.swift in Sources */,
 				9A0D83601F5F954000518AAD /* TextColorTests.swift in Sources */,
+				9A8E12EA1F6B1C5000963253 /* String+PathTests.swift in Sources */,
 				9A0D835C1F5F93FD00518AAD /* StyleTests.swift in Sources */,
 				9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */,
 				9A0D835A1F5F932B00518AAD /* EscapeSequenceTests.swift in Sources */,
