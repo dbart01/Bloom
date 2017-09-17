@@ -144,11 +144,8 @@ class FileTests: XCTestCase {
         try! File.touch(path)
         XCTAssertTrue(self.fileExists(at: path))
         
-        do {
-            try File.rm(at: path)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.rm(at: path)
+        
         XCTAssertFalse(self.fileExists(at: path))
     }
     
@@ -158,11 +155,8 @@ class FileTests: XCTestCase {
         try! File.mkdir(temp)
         XCTAssertTrue(self.fileExists(at: temp))
         
-        do {
-            try File.rm(at: temp)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.rm(at: temp)
+            
         XCTAssertFalse(self.fileExists(at: temp))
     }
     
@@ -174,11 +168,7 @@ class FileTests: XCTestCase {
         
         try! File.touch("\(temp)/file1.txt")
         
-        do {
-            try File.rm(at: temp, recursive: true)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.rm(at: temp, recursive: true)
         
         XCTAssertFalse(self.fileExists(at: temp))
     }
@@ -257,11 +247,7 @@ class FileTests: XCTestCase {
     func testTouchNonexistantFile() {
         let path = "\(FileTests.rootPath)/touch.text"
         
-        do {
-            try File.touch(path)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.touch(path)
         
         let exists = self.fileExists(at: path)
         XCTAssertTrue(exists)
@@ -276,11 +262,7 @@ class FileTests: XCTestCase {
         let diskContent = self.read(from: path)
         XCTAssertEqual(diskContent, content)
         
-        do {
-            try File.touch(path)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.touch(path)
         
         let actualContent = self.read(from: path)
         XCTAssertEqual(content, actualContent)
@@ -294,11 +276,7 @@ class FileTests: XCTestCase {
         
         sleep(1)
         
-        do {
-            try File.touch(path)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.touch(path)
         
         let modifiedDates = self.touchDates(at: path)
         
@@ -312,11 +290,7 @@ class FileTests: XCTestCase {
         
         let date = self.pastDate()
         
-        do {
-            try File.touch(path, date: date)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.touch(path, date: date)
         
         let touchDates = self.touchDates(at: path)
         
@@ -330,11 +304,7 @@ class FileTests: XCTestCase {
     func testCreateDirectoryWithoutIntermediate() {
         let path = "\(FileTests.rootPath)/mkdir"
         
-        do {
-            try File.mkdir(path)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.mkdir(path)
         
         XCTAssertTrue(self.fileExists(at: path))
     }
@@ -355,11 +325,7 @@ class FileTests: XCTestCase {
     func testCreateDirectoryWithIntermediate() {
         let path = "\(FileTests.rootPath)/intermediate/mkdir"
         
-        do {
-            try File.mkdir(path, createIntermediate: true)
-        } catch {
-            XCTFail(error.localizedDescription)
-        }
+        try! File.mkdir(path, createIntermediate: true)
         
         XCTAssertTrue(self.fileExists(at: path))
     }
