@@ -365,6 +365,43 @@ class FileTests: XCTestCase {
     }
     
     // ----------------------------------
+    //  MARK: - Permissions -
+    //
+    func testPermissionsWriteRaw() {
+        let path = "\(FileTests.rootPath)/permissionsRawWrite"
+        self.write("Raw permissions content for writing", path: path)
+
+        XCTAssertEqual(self.posixPermissions(at: path), 0o644)
+        
+        try! File.chmod(at: path, permissions: 0o777)
+        
+        XCTAssertEqual(self.posixPermissions(at: path), 0o777)
+    }
+    
+    func testPermissionsWriteTyped() {
+        let path = "\(FileTests.rootPath)/permissionsTypedWrite"
+        self.write("Typed permissions content for writing", path: path)
+        
+        XCTAssertEqual(self.posixPermissions(at: path), 0o644)
+        
+        try! File.chmod(at: path, permissions: File.Permissions(
+            user:  .read,
+            group: .none,
+            other: .none
+        ))
+        
+        XCTAssertEqual(self.posixPermissions(at: path), 0o400)
+    }
+    
+    func testPermissionsRead() {
+        let path = "\(FileTests.rootPath)/permissionsTypedRead"
+        self.write("Typed permissions content for reading", path: path)
+        
+        let permissions = try! File.chmod(at: path)
+        XCTAssertEqual(permissions.rawValue, 0o644)
+    }
+    
+    // ----------------------------------
     //  MARK: - Utilities -
     //
     private func fileExists(at path: FilePath) -> Bool {
@@ -381,6 +418,11 @@ class FileTests: XCTestCase {
     
     private func read(from path: FilePath) -> String {
         return String(data: try! Data(contentsOf: path.fileURL), encoding: .utf8)!
+    }
+    
+    private func posixPermissions(at path: FilePath) -> Int {
+        let permissions = try! self.fileManager.attributesOfItem(atPath: path.expandingTilde)
+        return permissions[FileAttributeKey.posixPermissions] as! Int
     }
     
     private func touchDates(at path: FilePath) -> (created: Date, modified: Date) {

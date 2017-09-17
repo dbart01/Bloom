@@ -153,6 +153,36 @@ public class File {
     public static func mkdir(_ url: URL, createIntermediate: Bool = false) throws {
         try self.fileManager.createDirectory(at: url, withIntermediateDirectories: createIntermediate, attributes: nil)
     }
+    
+    // ----------------------------------
+    //  MARK: - Permissions -
+    //
+    public static func chmod(at path: FilePath) throws -> Permissions {
+        return try self.chmod(at: path.fileURL)
+    }
+    
+    public static func chmod(at url: URL) throws -> Permissions {
+        let attributes = try self.fileManager.attributesOfItem(atPath: url.path)
+        return Permissions(rawValue: attributes[FileAttributeKey.posixPermissions] as! Int)!
+    }
+    
+    public static func chmod(at path: FilePath, permissions: Permissions) throws {
+        try self.chmod(at: path.fileURL, permissions: permissions)
+    }
+    
+    public static func chmod(at url: URL, permissions: Permissions) throws {
+        try self.chmod(at: url, permissions: permissions.rawValue)
+    }
+    
+    public static func chmod(at path: FilePath, permissions: Int) throws {
+        try self.chmod(at: path.fileURL, permissions: permissions)
+    }
+    
+    public static func chmod(at url: URL, permissions: Int) throws {
+        try self.fileManager.setAttributes([
+            FileAttributeKey.posixPermissions: permissions
+        ], ofItemAtPath: url.path)
+    }
 }
 
 public enum FileError: Error {

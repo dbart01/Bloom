@@ -39,6 +39,8 @@
 		9A65F9C91F5E444E00380FA1 /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9A8E12E81F6B1C3300963253 /* String+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E12E71F6B1C3300963253 /* String+Path.swift */; };
 		9A8E12EA1F6B1C5000963253 /* String+PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E12E91F6B1C5000963253 /* String+PathTests.swift */; };
+		9AC2EFDD1F6EB6EF0037E0D7 /* File.Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2EFDC1F6EB6EF0037E0D7 /* File.Permissions.swift */; };
+		9AC2EFDF1F6EB7480037E0D7 /* File.PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2EFDE1F6EB7480037E0D7 /* File.PermissionsTests.swift */; };
 		9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */; };
 		9AE3835E1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */; };
 		9AE383601F5E0493007B2E78 /* Fragment+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */; };
@@ -80,6 +82,8 @@
 		9A65F9CE1F5E444E00380FA1 /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8E12E71F6B1C3300963253 /* String+Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Path.swift"; sourceTree = "<group>"; };
 		9A8E12E91F6B1C5000963253 /* String+PathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+PathTests.swift"; sourceTree = "<group>"; };
+		9AC2EFDC1F6EB6EF0037E0D7 /* File.Permissions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.Permissions.swift; sourceTree = "<group>"; };
+		9AC2EFDE1F6EB7480037E0D7 /* File.PermissionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.PermissionsTests.swift; sourceTree = "<group>"; };
 		9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+TextColor.swift"; sourceTree = "<group>"; };
 		9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+BackgroundColor.swift"; sourceTree = "<group>"; };
 		9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+Styles.swift"; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				9A11EA761F6A9D080051F987 /* File.swift */,
+				9AC2EFDC1F6EB6EF0037E0D7 /* File.Permissions.swift */,
 				9A8E12E71F6B1C3300963253 /* String+Path.swift */,
 			);
 			path = "File Operations";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				9A11EA781F6AA1D60051F987 /* FileTests.swift */,
+				9AC2EFDE1F6EB7480037E0D7 /* File.PermissionsTests.swift */,
 				9A8E12E91F6B1C5000963253 /* String+PathTests.swift */,
 			);
 			path = "File Operations";
@@ -378,6 +384,7 @@
 				9A38278F1F5D9E1C0085363F /* Fragment.swift in Sources */,
 				9AE383601F5E0493007B2E78 /* Fragment+Styles.swift in Sources */,
 				9A11EA771F6A9D080051F987 /* File.swift in Sources */,
+				9AC2EFDD1F6EB6EF0037E0D7 /* File.Permissions.swift in Sources */,
 				9A3827951F5DA4610085363F /* TextColor.swift in Sources */,
 				9A3827971F5DA46C0085363F /* BackgroundColor.swift in Sources */,
 				9A38279D1F5DE27D0085363F /* Style.swift in Sources */,
@@ -401,6 +408,7 @@
 				9A0D835C1F5F93FD00518AAD /* StyleTests.swift in Sources */,
 				9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */,
 				9A0D835A1F5F932B00518AAD /* EscapeSequenceTests.swift in Sources */,
+				9AC2EFDF1F6EB7480037E0D7 /* File.PermissionsTests.swift in Sources */,
 				9A0D83581F5F925700518AAD /* AttributeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
