@@ -103,6 +103,21 @@ public class File {
     }
     
     // ----------------------------------
+    //  MARK: - Links -
+    //
+    public static func ln(at linkPath: FilePath, source: FilePath, symbolic: Bool = false) throws {
+        try self.ln(at: linkPath.fileURL, source: source.fileURL, symbolic: symbolic)
+    }
+    
+    public static func ln(at linkURL: URL, source: URL, symbolic: Bool = false) throws {
+        if symbolic {
+            try self.fileManager.createSymbolicLink(at: linkURL, withDestinationURL: source)
+        } else {
+            try self.fileManager.linkItem(at: source, to: linkURL)
+        }
+    }
+    
+    // ----------------------------------
     //  MARK: - Touch -
     //
     public static func touch(_ path: FilePath, date: Date? = nil) throws {

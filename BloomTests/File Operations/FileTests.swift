@@ -207,6 +207,39 @@ class FileTests: XCTestCase {
     }
     
     // ----------------------------------
+    //  MARK: - Links -
+    //
+    func testLinkHard() {
+        let source = "\(FileTests.rootPath)/hardLinkSource"
+        let link   = "\(FileTests.rootPath)/hardLink"
+        
+        self.write("Hard link content", path: source)
+        
+        XCTAssertTrue(self.fileExists(at: source))
+        XCTAssertFalse(self.fileExists(at: link))
+        
+        try! File.ln(at: link, source: source)
+        
+        XCTAssertTrue(self.fileExists(at: link))
+        XCTAssertNil(self.symbolicLinkSource(at: link))
+    }
+    
+    func testLinkSymbolic() {
+        let source = "\(FileTests.rootPath)/symLinkSource"
+        let link   = "\(FileTests.rootPath)/symLink"
+        
+        self.write("Sym link content", path: source)
+        
+        XCTAssertTrue(self.fileExists(at: source))
+        XCTAssertFalse(self.fileExists(at: link))
+        
+        try! File.ln(at: link, source: source, symbolic: true)
+        
+        XCTAssertTrue(self.fileExists(at: link))
+        XCTAssertEqual(self.symbolicLinkSource(at: link), source.expandingTilde)
+    }
+    
+    // ----------------------------------
     //  MARK: - Touch -
     //
     func testTouchNonexistantFile() {
@@ -324,6 +357,10 @@ class FileTests: XCTestCase {
     //
     private func fileExists(at path: FilePath) -> Bool {
         return self.fileManager.fileExists(atPath: path.expandingTilde)
+    }
+    
+    private func symbolicLinkSource(at path: FilePath) -> FilePath? {
+        return try? self.fileManager.destinationOfSymbolicLink(atPath: path.expandingTilde)
     }
     
     private func write(_ content: String, path: FilePath) {
