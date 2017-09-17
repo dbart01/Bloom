@@ -79,6 +79,18 @@ class FileTests: XCTestCase {
         XCTAssertEqual(cdPath2, URL(fileURLWithPath: self.fileManager.currentDirectoryPath))
     }
     
+    func testPresentWorkingDirectory() {
+        let pwd1 = "~".expandingTilde
+        self.fileManager.changeCurrentDirectoryPath(pwd1)
+        
+        XCTAssertEqual(pwd1, File.pwd)
+        
+        let pwd2 = "\(FileTests.rootPath)".expandingTilde
+        self.fileManager.changeCurrentDirectoryPath(pwd2)
+        
+        XCTAssertEqual(pwd2, File.pwd)
+    }
+    
     // ----------------------------------
     //  MARK: - Move -
     //

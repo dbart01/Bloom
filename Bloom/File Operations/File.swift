@@ -44,6 +44,10 @@ public class File {
         return self.cd(into: url.path)
     }
     
+    public static var pwd: FilePath {
+        return self.fileManager.currentDirectoryPath
+    }
+    
     // ----------------------------------
     //  MARK: - Move -
     //
