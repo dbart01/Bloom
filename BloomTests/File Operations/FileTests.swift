@@ -391,8 +391,8 @@ class FileTests: XCTestCase {
         ])
     }
     
-    func testListDeepHiddenRecursive() {
-        let path = "\(FileTests.rootPath)/listRecursiveHidden"
+    func testListDeepShowingHidden() {
+        let path = "\(FileTests.rootPath)/listDeepShowingHidden"
         
         try! File.mkdir(path)
         self.write("File 0 content", path: "\(path)/.file0")
@@ -424,6 +424,22 @@ class FileTests: XCTestCase {
             "\(path)/file1".expandingTilde,
             "\(path)/file2".expandingTilde,
             "\(path)/file3".expandingTilde,
+        ])
+    }
+    
+    func testListDeepSkippingPackages() {
+        let path = "\(FileTests.rootPath)/listDeepSkippingPackages"
+        
+        try! File.mkdir(path)
+        try! File.mkdir("\(path)/Test.app")
+        self.write("File 1 content", path: "\(path)/Test.app/file1")
+        self.write("File 2 content", path: "\(path)/Test.app/file2")
+        
+        let listing = try! File.ls(path, options: [.recursive, .showHidden, .skipPackages])
+        
+        XCTAssertEqual(listing.count, 1)
+        XCTAssertEqual(listing, [
+            "\(path)/Test.app".expandingTilde,
         ])
     }
     

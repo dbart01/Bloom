@@ -209,18 +209,10 @@ public class File {
             enumerationOptions.insert(.skipsHiddenFiles)
         }
 
-        var encounteredError: Error?
-        let enumerator = self.fileManager.enumerator(at: url, includingPropertiesForKeys: nil, options: enumerationOptions) { url, error in
-            encounteredError = error
-            return false
-        }!
+        let enumerator = self.fileManager.enumerator(at: url, includingPropertiesForKeys: nil, options: enumerationOptions)!
         
         let urls = enumerator.map {
             $0 as! URL
-        }
-        
-        if let error = encounteredError {
-            throw error
         }
         
         return urls
