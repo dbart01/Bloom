@@ -368,6 +368,64 @@ class FileTests: XCTestCase {
     }
     
     // ----------------------------------
+    //  MARK: - List -
+    //
+    func testListShallowVisible() {
+        let path = "\(FileTests.rootPath)/listShallowVisible"
+        
+        try! File.mkdir(path)
+        self.write("File 0 content", path: "\(path)/.file0")
+        self.write("File 1 content", path: "\(path)/file1")
+        self.write("File 2 content", path: "\(path)/file2")
+        self.write("File 3 content", path: "\(path)/file3")
+        
+        let listing = try! File.ls(path)
+        
+        XCTAssertEqual(listing.count, 3)
+        XCTAssertEqual(listing, [
+            "\(path)/file1".expandingTilde,
+            "\(path)/file2".expandingTilde,
+            "\(path)/file3".expandingTilde,
+        ])
+    }
+    
+    func testListDeepHiddenRecursive() {
+        let path = "\(FileTests.rootPath)/listRecursiveHidden"
+        
+        try! File.mkdir(path)
+        self.write("File 0 content", path: "\(path)/.file0")
+        self.write("File 1 content", path: "\(path)/file1")
+        self.write("File 2 content", path: "\(path)/file2")
+        self.write("File 3 content", path: "\(path)/file3")
+        
+        try! File.mkdir("\(path)/dir1")
+        self.write("File 0 content", path: "\(path)/dir1/.file0")
+        self.write("File 1 content", path: "\(path)/dir1/file1")
+        
+        try! File.mkdir("\(path)/dir1/dir2")
+        self.write("File 0 content", path: "\(path)/dir1/dir2/.file0")
+        self.write("File 1 content", path: "\(path)/dir1/dir2/file1")
+        
+        var listing = try! File.ls(path, options: [.recursive, .showHidden])
+        
+        listing.sort()
+        
+        XCTAssertEqual(listing.count, 10)
+        XCTAssertEqual(listing, [
+            "\(path)/.file0".expandingTilde,
+            "\(path)/dir1".expandingTilde,
+            "\(path)/dir1/.file0".expandingTilde,
+            "\(path)/dir1/dir2".expandingTilde,
+            "\(path)/dir1/dir2/.file0".expandingTilde,
+            "\(path)/dir1/dir2/file1".expandingTilde,
+            "\(path)/dir1/file1".expandingTilde,
+            "\(path)/file1".expandingTilde,
+            "\(path)/file2".expandingTilde,
+            "\(path)/file3".expandingTilde,
+        ])
+    }
+    
+    // ----------------------------------
     //  MARK: - Utilities -
     //
     private func fileExists(at path: FilePath) -> Bool {

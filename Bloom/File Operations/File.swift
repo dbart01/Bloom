@@ -183,6 +183,59 @@ public class File {
             FileAttributeKey.posixPermissions: permissions
         ], ofItemAtPath: url.path)
     }
+    
+    // ----------------------------------
+    //  MARK: - List -
+    //
+    public static func ls(_ path: FilePath, options: ListOptions = .none) throws -> [FilePath] {
+        return try self.ls(path.fileURL, options: options).map { $0.path }
+    }
+    
+    public static func ls(_ url: URL, options: ListOptions = .none) throws -> [URL] {
+        var enumerationOptions: FileManager.DirectoryEnumerationOptions = []
+        
+        if !options.contains(.recursive) {
+            enumerationOptions.insert(.skipsSubdirectoryDescendants)
+            enumerationOptions.insert(.skipsPackageDescendants)
+        } else {
+            if options.contains(.skipPackages) {
+                enumerationOptions.insert(.skipsPackageDescendants)
+            }
+        }
+        
+        if !options.contains(.showHidden) {
+            enumerationOptions.insert(.skipsHiddenFiles)
+        }
+
+        var encounteredError: Error?
+        let enumerator = self.fileManager.enumerator(at: url, includingPropertiesForKeys: nil, options: enumerationOptions) { url, error in
+            encounteredError = error
+            return false
+        }!
+        
+        let urls = enumerator.map {
+            $0 as! URL
+        }
+        
+        if let error = encounteredError {
+            throw error
+        }
+        
+        return urls
+    }
+}
+
+public struct ListOptions: OptionSet {
+    public var rawValue: Int
+    
+    public static let none         = ListOptions(rawValue: 0 << 0)
+    public static let recursive    = ListOptions(rawValue: 1 << 1)
+    public static let skipPackages = ListOptions(rawValue: 1 << 2)
+    public static let showHidden   = ListOptions(rawValue: 1 << 3)
+    
+    public init(rawValue: Int) {
+        self.rawValue = rawValue
+    }
 }
 
 public enum FileError: Error {
