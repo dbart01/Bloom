@@ -132,11 +132,13 @@ public class File {
         let fileExists = self.fileManager.fileExists(atPath: url.path)
         if fileExists {
             
-            let modifiedDate = date ?? Date()
-            try self.fileManager.setAttributes([
-                FileAttributeKey.creationDate     : modifiedDate,
-                FileAttributeKey.modificationDate : modifiedDate,
-            ], ofItemAtPath: url.path)
+            let newDate    = date ?? Date()
+            var mutableURL = url
+            
+            try mutableURL.setResourceValuesUsing { values in
+                values.contentAccessDate       = newDate
+                values.contentModificationDate = newDate
+            }
             
         } else {
             try Data().write(to: url, options: .atomic)
@@ -241,4 +243,14 @@ public struct ListOptions: OptionSet {
 public enum FileError: Error {
     case notFound
     case nonEmptyDirectory
+    case unknown
+}
+
+private extension URL {
+    
+    mutating func setResourceValuesUsing(handler: (inout URLResourceValues) -> Void) throws {
+        var values = URLResourceValues()
+        handler(&values)
+        try self.setResourceValues(values)
+    }
 }

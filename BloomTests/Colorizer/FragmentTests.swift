@@ -39,7 +39,7 @@ class FragmentTests: XCTestCase {
         attributes.textColor = .blue
         attributes.styleAttributes.insert(.blinking)
         
-        let fragment   = Fragment(content, attributeCollection: attributes, shouldClear: false)
+        let fragment = Fragment(content, attributeCollection: attributes, shouldClear: false)
         
         XCTAssertEqual(fragment.content,     content)
         XCTAssertEqual(fragment.attributes,  attributes)

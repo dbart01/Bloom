@@ -278,24 +278,26 @@ class FileTests: XCTestCase {
         
         try! File.touch(path)
         
-        let modifiedDates = self.touchDates(at: path)
+        let newDates = self.touchDates(at: path)
         
-        XCTAssertTrue(modifiedDates.created  > originalDates.created)
-        XCTAssertTrue(modifiedDates.modified > originalDates.modified)
+        XCTAssertEqual(newDates.created, originalDates.created)
+        XCTAssertTrue(newDates.modified > originalDates.modified)
+        XCTAssertTrue(newDates.accessed > originalDates.accessed)
     }
     
     func testTouchExistingFileCustomDate() {
         let path = "\(FileTests.rootPath)/customDate.text"
         self.write("Content", path: path)
         
-        let date = self.pastDate()
+        let date = self.futureDate()
         
         try! File.touch(path, date: date)
         
         let touchDates = self.touchDates(at: path)
         
-        XCTAssertEqual(touchDates.created,  date)
-        XCTAssertEqual(touchDates.modified, date)
+        XCTAssertNotEqual(touchDates.created, date)
+        XCTAssertEqual(touchDates.modified,  date)
+        XCTAssertEqual(touchDates.accessed, date)
     }
     
     // ----------------------------------
@@ -449,16 +451,17 @@ class FileTests: XCTestCase {
         return permissions[FileAttributeKey.posixPermissions] as! Int
     }
     
-    private func touchDates(at path: FilePath) -> (created: Date, modified: Date) {
-        let attributes = try! self.fileManager.attributesOfItem(atPath: path.expandingTilde)
+    private func touchDates(at path: FilePath) -> (created: Date, modified: Date, accessed: Date) {
+        let values = try! path.fileURL.resourceValues(forKeys: [.creationDateKey, .contentModificationDateKey, .contentAccessDateKey])
         return (
-            attributes[FileAttributeKey.creationDate]     as! Date,
-            attributes[FileAttributeKey.modificationDate] as! Date
+            values.creationDate!,
+            values.contentModificationDate!,
+            values.contentAccessDate!
         )
     }
     
-    private func pastDate() -> Date {
+    private func futureDate() -> Date {
         let now = Double(Int(Date().timeIntervalSince1970))
-        return Date(timeIntervalSince1970: now - 900)
+        return Date(timeIntervalSince1970: now + 900)
     }
 }
