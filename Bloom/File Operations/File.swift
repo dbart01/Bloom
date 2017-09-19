@@ -218,25 +218,3 @@ public class File {
         return urls
     }
 }
-
-public struct ListOptions: OptionSet {
-    public var rawValue: Int
-    
-    public static let none         = ListOptions(rawValue: 0 << 0)
-    public static let recursive    = ListOptions(rawValue: 1 << 1)
-    public static let skipPackages = ListOptions(rawValue: 1 << 2)
-    public static let showHidden   = ListOptions(rawValue: 1 << 3)
-    
-    public init(rawValue: Int) {
-        self.rawValue = rawValue
-    }
-}
-
-private extension URL {
-    
-    mutating func setResourceValuesUsing(handler: (inout URLResourceValues) -> Void) throws {
-        var values = URLResourceValues()
-        handler(&values)
-        try self.setResourceValues(values)
-    }
-}

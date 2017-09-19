@@ -17,6 +17,14 @@
 		9A11EA771F6A9D080051F987 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA761F6A9D080051F987 /* File.swift */; };
 		9A11EA791F6AA1D60051F987 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA781F6AA1D60051F987 /* FileTests.swift */; };
 		9A3224E31F71B4AC00F1263E /* File.OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3224E21F71B4AC00F1263E /* File.OperationError.swift */; };
+		9A3224E51F71B59E00F1263E /* File.ListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3224E41F71B59E00F1263E /* File.ListOptions.swift */; };
+		9A3224E81F71B5DC00F1263E /* URL+ResourceValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3224E71F71B5DC00F1263E /* URL+ResourceValues.swift */; };
+		9A3224E91F71B60400F1263E /* URL+ResourceValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3224E71F71B5DC00F1263E /* URL+ResourceValues.swift */; };
+		9A3224EA1F71B60400F1263E /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA761F6A9D080051F987 /* File.swift */; };
+		9A3224EB1F71B60400F1263E /* File.Permissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2EFDC1F6EB6EF0037E0D7 /* File.Permissions.swift */; };
+		9A3224EC1F71B60400F1263E /* File.OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3224E21F71B4AC00F1263E /* File.OperationError.swift */; };
+		9A3224ED1F71B60400F1263E /* File.ListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3224E41F71B59E00F1263E /* File.ListOptions.swift */; };
+		9A3224EE1F71B60400F1263E /* String+Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E12E71F6B1C3300963253 /* String+Path.swift */; };
 		9A38277E1F5D9DCF0085363F /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
 		9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */; };
 		9A3827851F5D9DCF0085363F /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -68,6 +76,8 @@
 		9A11EA761F6A9D080051F987 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		9A11EA781F6AA1D60051F987 /* FileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTests.swift; sourceTree = "<group>"; };
 		9A3224E21F71B4AC00F1263E /* File.OperationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.OperationError.swift; sourceTree = "<group>"; };
+		9A3224E41F71B59E00F1263E /* File.ListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.ListOptions.swift; sourceTree = "<group>"; };
+		9A3224E71F71B5DC00F1263E /* URL+ResourceValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+ResourceValues.swift"; sourceTree = "<group>"; };
 		9A3827741F5D9DCF0085363F /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827771F5D9DCF0085363F /* Bloom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bloom.h; sourceTree = "<group>"; };
 		9A3827781F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +140,14 @@
 			path = Attributes;
 			sourceTree = "<group>";
 		};
+		9A3224E61F71B5CF00F1263E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A3224E71F71B5DC00F1263E /* URL+ResourceValues.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9A38276A1F5D9DCF0085363F = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				9A3827771F5D9DCF0085363F /* Bloom.h */,
+				9A3224E61F71B5CF00F1263E /* Extensions */,
 				9AC2EFD81F6D77860037E0D7 /* File Operations */,
 				9AC2EFD91F6D779C0037E0D7 /* Colorizer */,
 				9A3827781F5D9DCF0085363F /* Info.plist */,
@@ -189,6 +208,7 @@
 				9A11EA761F6A9D080051F987 /* File.swift */,
 				9AC2EFDC1F6EB6EF0037E0D7 /* File.Permissions.swift */,
 				9A3224E21F71B4AC00F1263E /* File.OperationError.swift */,
+				9A3224E41F71B59E00F1263E /* File.ListOptions.swift */,
 				9A8E12E71F6B1C3300963253 /* String+Path.swift */,
 			);
 			path = "File Operations";
@@ -391,8 +411,10 @@
 				9A3827951F5DA4610085363F /* TextColor.swift in Sources */,
 				9A3827971F5DA46C0085363F /* BackgroundColor.swift in Sources */,
 				9A38279D1F5DE27D0085363F /* Style.swift in Sources */,
+				9A3224E81F71B5DC00F1263E /* URL+ResourceValues.swift in Sources */,
 				9A3827931F5DA4410085363F /* EscapeSequence.swift in Sources */,
 				9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */,
+				9A3224E51F71B59E00F1263E /* File.ListOptions.swift in Sources */,
 				9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */,
 				9A8E12E81F6B1C3300963253 /* String+Path.swift in Sources */,
 				9A3224E31F71B4AC00F1263E /* File.OperationError.swift in Sources */,
@@ -422,15 +444,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A65F9BD1F5E444E00380FA1 /* Fragment+BackgroundColor.swift in Sources */,
+				9A3224EA1F71B60400F1263E /* File.swift in Sources */,
 				9A65F9BE1F5E444E00380FA1 /* Attribute.swift in Sources */,
 				9A65F9BF1F5E444E00380FA1 /* Fragment.swift in Sources */,
 				9A65F9C01F5E444E00380FA1 /* Fragment+Styles.swift in Sources */,
+				9A3224EB1F71B60400F1263E /* File.Permissions.swift in Sources */,
 				9A65F9C11F5E444E00380FA1 /* TextColor.swift in Sources */,
 				9A65F9C21F5E444E00380FA1 /* BackgroundColor.swift in Sources */,
+				9A3224E91F71B60400F1263E /* URL+ResourceValues.swift in Sources */,
 				9A65F9C31F5E444E00380FA1 /* Style.swift in Sources */,
 				9A65F9C41F5E444E00380FA1 /* EscapeSequence.swift in Sources */,
+				9A3224EE1F71B60400F1263E /* String+Path.swift in Sources */,
+				9A3224ED1F71B60400F1263E /* File.ListOptions.swift in Sources */,
 				9A65F9C51F5E444E00380FA1 /* Fragment+TextColor.swift in Sources */,
 				9A65F9C61F5E444E00380FA1 /* AttributeCollection.swift in Sources */,
+				9A3224EC1F71B60400F1263E /* File.OperationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
