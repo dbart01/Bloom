@@ -98,11 +98,11 @@ public class File {
             if !isDirectory.boolValue || isEmpty || (isDirectory.boolValue && recursive) {
                 try self.fileManager.removeItem(at: url)
             } else {
-                throw FileError.nonEmptyDirectory
+                throw File.OperationError.nonEmptyDirectory
             }
             
         } else {
-            throw FileError.notFound
+            throw File.OperationError.notFound
         }
     }
     
@@ -230,12 +230,6 @@ public struct ListOptions: OptionSet {
     public init(rawValue: Int) {
         self.rawValue = rawValue
     }
-}
-
-public enum FileError: Error {
-    case notFound
-    case nonEmptyDirectory
-    case unknown
 }
 
 private extension URL {

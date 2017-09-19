@@ -16,6 +16,7 @@
 		9A0D83621F60124E00518AAD /* FragmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83611F60124E00518AAD /* FragmentTests.swift */; };
 		9A11EA771F6A9D080051F987 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA761F6A9D080051F987 /* File.swift */; };
 		9A11EA791F6AA1D60051F987 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA781F6AA1D60051F987 /* FileTests.swift */; };
+		9A3224E31F71B4AC00F1263E /* File.OperationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3224E21F71B4AC00F1263E /* File.OperationError.swift */; };
 		9A38277E1F5D9DCF0085363F /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
 		9A3827831F5D9DCF0085363F /* Fragment+ConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */; };
 		9A3827851F5D9DCF0085363F /* Bloom.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A3827771F5D9DCF0085363F /* Bloom.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -66,6 +67,7 @@
 		9A0D83611F60124E00518AAD /* FragmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FragmentTests.swift; sourceTree = "<group>"; };
 		9A11EA761F6A9D080051F987 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		9A11EA781F6AA1D60051F987 /* FileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileTests.swift; sourceTree = "<group>"; };
+		9A3224E21F71B4AC00F1263E /* File.OperationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.OperationError.swift; sourceTree = "<group>"; };
 		9A3827741F5D9DCF0085363F /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827771F5D9DCF0085363F /* Bloom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bloom.h; sourceTree = "<group>"; };
 		9A3827781F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			children = (
 				9A11EA761F6A9D080051F987 /* File.swift */,
 				9AC2EFDC1F6EB6EF0037E0D7 /* File.Permissions.swift */,
+				9A3224E21F71B4AC00F1263E /* File.OperationError.swift */,
 				9A8E12E71F6B1C3300963253 /* String+Path.swift */,
 			);
 			path = "File Operations";
@@ -392,6 +395,7 @@
 				9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */,
 				9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */,
 				9A8E12E81F6B1C3300963253 /* String+Path.swift in Sources */,
+				9A3224E31F71B4AC00F1263E /* File.OperationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

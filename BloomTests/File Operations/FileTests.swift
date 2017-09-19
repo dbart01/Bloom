@@ -187,7 +187,7 @@ class FileTests: XCTestCase {
         do {
             try File.rm(at: temp)
         } catch {
-            XCTAssertEqual(error as! FileError, FileError.nonEmptyDirectory)
+            XCTAssertEqual(error as! File.OperationError, File.OperationError.nonEmptyDirectory)
             e.fulfill()
         }
         
@@ -204,7 +204,7 @@ class FileTests: XCTestCase {
         do {
             try File.rm(at: temp)
         } catch {
-            XCTAssertEqual(error as! FileError, FileError.notFound)
+            XCTAssertEqual(error as! File.OperationError, File.OperationError.notFound)
             e.fulfill()
         }
         
