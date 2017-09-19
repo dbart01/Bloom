@@ -183,14 +183,16 @@ class FileTests: XCTestCase {
         try! File.touch("\(temp)/file2.txt")
         try! File.touch("\(temp)/file3.txt")
         
+        let e = self.expectation(description: "Expect error")
         do {
             try File.rm(at: temp)
-            XCTFail("Expecting failure")
         } catch {
             XCTAssertEqual(error as! FileError, FileError.nonEmptyDirectory)
+            e.fulfill()
         }
         
         XCTAssertTrue(self.fileExists(at: temp))
+        self.wait(for: [e], timeout: 1.0)
     }
     
     func testRemoveNonexistantDirectory() {
@@ -198,14 +200,16 @@ class FileTests: XCTestCase {
         
         XCTAssertFalse(self.fileExists(at: temp))
         
+        let e = self.expectation(description: "Expect error")
         do {
             try File.rm(at: temp)
-            XCTFail("Expecting failure")
         } catch {
             XCTAssertEqual(error as! FileError, FileError.notFound)
+            e.fulfill()
         }
         
         XCTAssertFalse(self.fileExists(at: temp))
+        self.wait(for: [e], timeout: 1.0)
     }
     
     // ----------------------------------
@@ -314,14 +318,16 @@ class FileTests: XCTestCase {
     func testCreateDirectoryAttemptIntermediate() {
         let path = "\(FileTests.rootPath)/intermediate/mkdir"
         
+        let e = self.expectation(description: "Expect error")
         do {
             try File.mkdir(path)
-            XCTFail("Expecting failure.")
         } catch {
             XCTAssertTrue(true)
+            e.fulfill()
         }
         
         XCTAssertFalse(self.fileExists(at: path))
+        self.wait(for: [e], timeout: 1.0)
     }
     
     func testCreateDirectoryWithIntermediate() {
