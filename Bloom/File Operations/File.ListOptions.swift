@@ -15,7 +15,7 @@ extension File {
         public static let none         = ListOptions(rawValue: 0 << 0)
         public static let recursive    = ListOptions(rawValue: 1 << 1)
         public static let skipPackages = ListOptions(rawValue: 1 << 2)
-        public static let showHidden   = ListOptions(rawValue: 1 << 3)
+        public static let hidden       = ListOptions(rawValue: 1 << 3)
         
         public init(rawValue: Int) {
             self.rawValue = rawValue

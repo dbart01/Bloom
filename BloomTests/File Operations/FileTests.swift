@@ -459,7 +459,7 @@ class FileTests: XCTestCase {
         self.write("File 0 content", path: "\(path)/dir1/dir2/.file0")
         self.write("File 1 content", path: "\(path)/dir1/dir2/file1")
         
-        var listing = try! File.ls(path, options: [.recursive, .showHidden])
+        var listing = try! File.ls(path, options: [.recursive, .hidden])
         
         listing.sort()
         
@@ -486,7 +486,7 @@ class FileTests: XCTestCase {
         self.write("File 1 content", path: "\(path)/Test.app/file1")
         self.write("File 2 content", path: "\(path)/Test.app/file2")
         
-        let listing = try! File.ls(path, options: [.recursive, .showHidden, .skipPackages])
+        let listing = try! File.ls(path, options: [.recursive, .hidden, .skipPackages])
         
         XCTAssertEqual(listing.count, 1)
         XCTAssertEqual(listing, [
