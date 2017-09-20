@@ -59,6 +59,9 @@ class FilePermissionsTests: XCTestCase {
         
         scope = [.read, .write, .execute]
         XCTAssertEqual(scope.rawValue, 0o7)
+        
+        scope = [.all]
+        XCTAssertEqual(scope.rawValue, 0o7)
     }
     
     func testScopeAlgebra() {

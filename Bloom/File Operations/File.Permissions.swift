@@ -77,6 +77,7 @@ extension File.Permissions {
         public static let read    = Scope(rawValue: 1 << 2)
         public static let write   = Scope(rawValue: 1 << 1)
         public static let execute = Scope(rawValue: 1 << 0)
+        public static let all     = Scope(rawValue: Scope.read.rawValue | Scope.write.rawValue | Scope.execute.rawValue)
         
         func can(_ scopeOperation: Scope) -> Bool {
             return self.contains(scopeOperation)
