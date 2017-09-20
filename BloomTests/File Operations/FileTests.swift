@@ -92,6 +92,51 @@ class FileTests: XCTestCase {
     }
     
     // ----------------------------------
+    //  MARK: - Queries -
+    //
+    func testExistsWithExistingFile() {
+        let path = "\(FileTests.rootPath)/existsFile.txt"
+        
+        let (preExists, preIsDirectory) = File.exists(path)
+        XCTAssertFalse(preExists)
+        XCTAssertFalse(preIsDirectory)
+        
+        self.write("Existing file content", path: path)
+        
+        let (postExists, postIsDirectory) = File.exists(path)
+        XCTAssertTrue(postExists)
+        XCTAssertFalse(postIsDirectory)
+    }
+    
+    func testExistsWithExistingDirectory() {
+        let path = "\(FileTests.rootPath)/existsDirectory"
+        
+        let (preExists, preIsDirectory) = File.exists(path)
+        XCTAssertFalse(preExists)
+        XCTAssertFalse(preIsDirectory)
+        
+        try! File.mkdir(path)
+        
+        let (postExists, postIsDirectory) = File.exists(path)
+        XCTAssertTrue(postExists)
+        XCTAssertTrue(postIsDirectory)
+    }
+    
+    func testEmptyWithExistingEmptyDirectory() {
+        let path = "\(FileTests.rootPath)/existingEmptyDirectory"
+        
+        try! File.mkdir(path)
+        
+        XCTAssertTrue(File.empty(path))
+    }
+    
+    func testEmptyWithNonexistentDirectory() {
+        let path = "\(FileTests.rootPath)/nonexistentDirectory"
+        
+        XCTAssertTrue(File.empty(path))
+    }
+    
+    // ----------------------------------
     //  MARK: - Move -
     //
     func testMove() {

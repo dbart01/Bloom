@@ -49,6 +49,27 @@ public class File {
     }
     
     // ----------------------------------
+    //  MARK: - Queries -
+    //
+    public static func exists(_ path: FilePath) -> (fileExists: Bool, isDirectory: Bool) {
+        return self.exists(path.fileURL)
+    }
+    
+    public static func exists(_ url: URL) -> (fileExists: Bool, isDirectory: Bool) {
+        var isDirectory: ObjCBool = false
+        let fileExists = self.fileManager.fileExists(atPath: url.path, isDirectory: &isDirectory)
+        return (fileExists, isDirectory.boolValue)
+    }
+    
+    public static func empty(_ path: FilePath) -> Bool {
+        return self.empty(path.fileURL)
+    }
+    
+    public static func empty(_ url: URL) -> Bool {
+        return self.fileManager.enumerator(at: url, includingPropertiesForKeys: nil)?.nextObject() == nil
+    }
+    
+    // ----------------------------------
     //  MARK: - Move -
     //
     public static func mv(from: FilePath, to: FilePath) throws {
@@ -79,23 +100,10 @@ public class File {
     
     public static func rm(at url: URL, recursive: Bool = false) throws {
         
-        var isEmpty: Bool         = false
-        var isDirectory: ObjCBool = false
-        
-        let fileExists = self.fileManager.fileExists(atPath: url.path, isDirectory: &isDirectory)
-        
-        /* ---------------------------------
-         ** Check if the directory is empty.
-         ** If not, we can only remove if
-         ** `recursive` flag is true.
-         */
-        if isDirectory.boolValue {
-            let contents = try self.fileManager.contentsOfDirectory(atPath: url.path)
-            isEmpty      = contents.isEmpty
-        }
+        let (fileExists, isDirectory) = self.exists(url)
         
         if fileExists {
-            if !isDirectory.boolValue || isEmpty || (isDirectory.boolValue && recursive) {
+            if !isDirectory || self.empty(url) || (isDirectory && recursive) {
                 try self.fileManager.removeItem(at: url)
             } else {
                 throw File.OperationError.nonEmptyDirectory
@@ -168,22 +176,49 @@ public class File {
         return Permissions(rawValue: attributes[FileAttributeKey.posixPermissions] as! Int)!
     }
     
-    public static func chmod(at path: FilePath, permissions: Permissions) throws {
-        try self.chmod(at: path.fileURL, permissions: permissions)
+    public static func chmod(at path: FilePath, permissions: Permissions, recursive: Bool = false) throws {
+        try self.chmod(at: path.fileURL, permissions: permissions, recursive: recursive)
     }
     
-    public static func chmod(at url: URL, permissions: Permissions) throws {
-        try self.chmod(at: url, permissions: permissions.rawValue)
+    public static func chmod(at url: URL, permissions: Permissions, recursive: Bool = false) throws {
+        try self.chmod(at: url, permissions: permissions.rawValue, recursive: recursive)
     }
     
-    public static func chmod(at path: FilePath, permissions: Int) throws {
-        try self.chmod(at: path.fileURL, permissions: permissions)
+    public static func chmod(at path: FilePath, permissions: Int, recursive: Bool = false) throws {
+        try self.chmod(at: path.fileURL, permissions: permissions, recursive: recursive)
     }
     
-    public static func chmod(at url: URL, permissions: Int) throws {
-        try self.fileManager.setAttributes([
-            FileAttributeKey.posixPermissions: permissions
-        ], ofItemAtPath: url.path)
+    public static func chmod(at url: URL, permissions: Int, recursive: Bool = false) throws {
+        
+        let attributes = [FileAttributeKey.posixPermissions: permissions]
+        
+        let (fileExists, isDirectory) = self.exists(url)
+        if fileExists {
+            
+            if recursive && isDirectory {
+                
+                /* -----------------------------------
+                 ** Recursively traverse the directory
+                 ** and set the permission on the files
+                 ** and directories in reverse order;
+                 ** leaf -> root.
+                 */
+                let files = try self.ls(url, options: [.recursive, .hidden])
+                for file in files.reversed() {
+                    try self.chmod(at: file, permissions: permissions, recursive: recursive)
+                }
+                
+                /* ---------------------------------
+                 ** Afer updating the contents set
+                 ** the root directory permissions.
+                 */
+                try self.chmod(at: url, permissions: permissions, recursive: false)
+                
+            } else {
+                print("Updating permissions: \(url.lastPathComponent)")
+                try self.fileManager.setAttributes(attributes, ofItemAtPath: url.path)
+            }
+        }
     }
     
     // ----------------------------------
@@ -205,7 +240,7 @@ public class File {
             }
         }
         
-        if !options.contains(.showHidden) {
+        if !options.contains(.hidden) {
             enumerationOptions.insert(.skipsHiddenFiles)
         }
 
