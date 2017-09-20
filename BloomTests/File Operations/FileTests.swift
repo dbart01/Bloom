@@ -211,7 +211,7 @@ class FileTests: XCTestCase {
         try! File.mkdir(temp)
         XCTAssertTrue(self.fileExists(at: temp))
         
-        try! File.touch("\(temp)/file1.txt")
+        self.write("File content", path: "\(temp)/file1.txt")
         
         try! File.rm(at: temp, recursive: true)
         
@@ -228,16 +228,14 @@ class FileTests: XCTestCase {
         try! File.touch("\(temp)/file2.txt")
         try! File.touch("\(temp)/file3.txt")
         
-        let e = self.expectation(description: "Expect error")
         do {
             try File.rm(at: temp)
+            XCTFail()
         } catch {
             XCTAssertEqual(error as! File.OperationError, File.OperationError.nonEmptyDirectory)
-            e.fulfill()
         }
         
         XCTAssertTrue(self.fileExists(at: temp))
-        self.wait(for: [e], timeout: 1.0)
     }
     
     func testRemoveNonexistantDirectory() {
@@ -245,16 +243,14 @@ class FileTests: XCTestCase {
         
         XCTAssertFalse(self.fileExists(at: temp))
         
-        let e = self.expectation(description: "Expect error")
         do {
             try File.rm(at: temp)
+            XCTFail()
         } catch {
             XCTAssertEqual(error as! File.OperationError, File.OperationError.notFound)
-            e.fulfill()
         }
         
         XCTAssertFalse(self.fileExists(at: temp))
-        self.wait(for: [e], timeout: 1.0)
     }
     
     // ----------------------------------
@@ -363,16 +359,14 @@ class FileTests: XCTestCase {
     func testCreateDirectoryAttemptIntermediate() {
         let path = "\(FileTests.rootPath)/intermediate/mkdir"
         
-        let e = self.expectation(description: "Expect error")
         do {
             try File.mkdir(path)
+            XCTFail()
         } catch {
             XCTAssertTrue(true)
-            e.fulfill()
         }
         
         XCTAssertFalse(self.fileExists(at: path))
-        self.wait(for: [e], timeout: 1.0)
     }
     
     func testCreateDirectoryWithIntermediate() {
@@ -410,6 +404,65 @@ class FileTests: XCTestCase {
         ))
         
         XCTAssertEqual(self.posixPermissions(at: path), 0o400)
+    }
+    
+    func testPermissionsWriteTypedRecursive() {
+        let path = "\(FileTests.rootPath)/permissionsTypedWriteRecursive"
+        
+        let directories = [
+            path,
+            "\(path)/dir",
+            "\(path)/package.app",
+        ]
+        
+        let files = [
+            "\(path)/.file0",
+            "\(path)/file1",
+            "\(path)/dir/.file0",
+            "\(path)/dir/file1",
+            "\(path)/package.app/file0",
+            "\(path)/package.app/file1",
+        ]
+        
+        directories.forEach {
+            try! File.mkdir($0)
+        }
+        
+        files.forEach {
+            self.write("File content: \($0)", path: $0)
+        }
+        
+        /* ---------------------------------
+         ** Verify the pre-chmod permissions
+         */
+        directories.forEach {
+            XCTAssertEqual(self.posixPermissions(at: $0), 0o755)
+        }
+        
+        files.forEach {
+            XCTAssertEqual(self.posixPermissions(at: $0), 0o644)
+        }
+        
+        /* ---------------------------------
+         ** Recursively update permissions
+         */
+        let permissions = File.Permissions(
+            user:  [.all],
+            group: [.all],
+            other: [.all]
+        )
+        try! File.chmod(at: path, permissions: permissions, recursive: true)
+        
+        /* ---------------------------------
+         ** Assert post-chmod permissions
+         */
+        directories.forEach {
+            XCTAssertEqual(self.posixPermissions(at: $0), permissions.rawValue)
+        }
+        
+        files.forEach {
+            XCTAssertEqual(self.posixPermissions(at: $0), permissions.rawValue)
+        }
     }
     
     func testPermissionsRead() {
