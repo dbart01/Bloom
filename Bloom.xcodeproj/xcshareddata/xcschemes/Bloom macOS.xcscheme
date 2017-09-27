@@ -27,15 +27,16 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A38277C1F5D9DCF0085363F"
-               BuildableName = "BloomTests.xctest"
-               BlueprintName = "BloomTests"
+               BlueprintIdentifier = "9AEE231A1F7BCE5C00B27594"
+               BuildableName = "BloomTests macOS.xctest"
+               BlueprintName = "BloomTests macOS"
                ReferencedContainer = "container:Bloom.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -53,6 +53,18 @@
 		9AE383581F5DF2AE007B2E78 /* Fragment+TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */; };
 		9AE3835E1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */; };
 		9AE383601F5E0493007B2E78 /* Fragment+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */; };
+		9AEE231E1F7BCE5C00B27594 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA781F6AA1D60051F987 /* FileTests.swift */; };
+		9AEE231F1F7BCE5C00B27594 /* Fragment+ConvenienceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */; };
+		9AEE23201F7BCE5C00B27594 /* BackgroundColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835D1F5F947900518AAD /* BackgroundColorTests.swift */; };
+		9AEE23211F7BCE5C00B27594 /* AttributeCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83541F5F8DF700518AAD /* AttributeCollectionTests.swift */; };
+		9AEE23221F7BCE5C00B27594 /* TextColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835F1F5F954000518AAD /* TextColorTests.swift */; };
+		9AEE23231F7BCE5C00B27594 /* String+PathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8E12E91F6B1C5000963253 /* String+PathTests.swift */; };
+		9AEE23241F7BCE5C00B27594 /* StyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D835B1F5F93FD00518AAD /* StyleTests.swift */; };
+		9AEE23251F7BCE5C00B27594 /* FragmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83611F60124E00518AAD /* FragmentTests.swift */; };
+		9AEE23261F7BCE5C00B27594 /* EscapeSequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83591F5F932B00518AAD /* EscapeSequenceTests.swift */; };
+		9AEE23271F7BCE5C00B27594 /* File.PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2EFDE1F6EB7480037E0D7 /* File.PermissionsTests.swift */; };
+		9AEE23281F7BCE5C00B27594 /* AttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0D83571F5F925700518AAD /* AttributeTests.swift */; };
+		9AEE232A1F7BCE5C00B27594 /* Bloom.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A3827741F5D9DCF0085363F /* Bloom.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +74,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 9A3827731F5D9DCF0085363F;
 			remoteInfo = Bloom;
+		};
+		9AEE23311F7BCF2800B27594 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A38276B1F5D9DCF0085363F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A65F9BB1F5E444E00380FA1;
+			remoteInfo = "Bloom macOS";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -81,7 +100,7 @@
 		9A3827741F5D9DCF0085363F /* Bloom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Bloom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827771F5D9DCF0085363F /* Bloom.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bloom.h; sourceTree = "<group>"; };
 		9A3827781F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9A38277D1F5D9DCF0085363F /* BloomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A38277D1F5D9DCF0085363F /* BloomTests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BloomTests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A3827821F5D9DCF0085363F /* Fragment+ConvenienceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+ConvenienceTests.swift"; sourceTree = "<group>"; };
 		9A3827841F5D9DCF0085363F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A38278E1F5D9E1C0085363F /* Fragment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fragment.swift; sourceTree = "<group>"; };
@@ -99,6 +118,7 @@
 		9AE383571F5DF2AE007B2E78 /* Fragment+TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+TextColor.swift"; sourceTree = "<group>"; };
 		9AE3835D1F5E02F4007B2E78 /* Fragment+BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+BackgroundColor.swift"; sourceTree = "<group>"; };
 		9AE3835F1F5E0493007B2E78 /* Fragment+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fragment+Styles.swift"; sourceTree = "<group>"; };
+		9AEE232F1F7BCE5C00B27594 /* BloomTests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BloomTests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +141,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEE23291F7BCE5C00B27594 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AEE232A1F7BCE5C00B27594 /* Bloom.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +190,8 @@
 			children = (
 				9A3827741F5D9DCF0085363F /* Bloom.framework */,
 				9A65F9CE1F5E444E00380FA1 /* Bloom.framework */,
-				9A38277D1F5D9DCF0085363F /* BloomTests.xctest */,
+				9A38277D1F5D9DCF0085363F /* BloomTests iOS.xctest */,
+				9AEE232F1F7BCE5C00B27594 /* BloomTests macOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -294,9 +323,9 @@
 			productReference = 9A3827741F5D9DCF0085363F /* Bloom.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		9A38277C1F5D9DCF0085363F /* BloomTests */ = {
+		9A38277C1F5D9DCF0085363F /* BloomTests iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9A38278B1F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "BloomTests" */;
+			buildConfigurationList = 9A38278B1F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "BloomTests iOS" */;
 			buildPhases = (
 				9A3827791F5D9DCF0085363F /* Sources */,
 				9A38277A1F5D9DCF0085363F /* Frameworks */,
@@ -307,9 +336,9 @@
 			dependencies = (
 				9A3827801F5D9DCF0085363F /* PBXTargetDependency */,
 			);
-			name = BloomTests;
+			name = "BloomTests iOS";
 			productName = BloomTests;
-			productReference = 9A38277D1F5D9DCF0085363F /* BloomTests.xctest */;
+			productReference = 9A38277D1F5D9DCF0085363F /* BloomTests iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		9A65F9BB1F5E444E00380FA1 /* Bloom macOS */ = {
@@ -329,6 +358,24 @@
 			productName = Bloom;
 			productReference = 9A65F9CE1F5E444E00380FA1 /* Bloom.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		9AEE231A1F7BCE5C00B27594 /* BloomTests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9AEE232C1F7BCE5C00B27594 /* Build configuration list for PBXNativeTarget "BloomTests macOS" */;
+			buildPhases = (
+				9AEE231D1F7BCE5C00B27594 /* Sources */,
+				9AEE23291F7BCE5C00B27594 /* Frameworks */,
+				9AEE232B1F7BCE5C00B27594 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9AEE23321F7BCF2800B27594 /* PBXTargetDependency */,
+			);
+			name = "BloomTests macOS";
+			productName = BloomTests;
+			productReference = 9AEE232F1F7BCE5C00B27594 /* BloomTests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -352,6 +399,9 @@
 					9A65F9BB1F5E444E00380FA1 = {
 						ProvisioningStyle = Manual;
 					};
+					9AEE231A1F7BCE5C00B27594 = {
+						ProvisioningStyle = Manual;
+					};
 				};
 			};
 			buildConfigurationList = 9A38276E1F5D9DCF0085363F /* Build configuration list for PBXProject "Bloom" */;
@@ -368,7 +418,8 @@
 			targets = (
 				9A3827731F5D9DCF0085363F /* Bloom iOS */,
 				9A65F9BB1F5E444E00380FA1 /* Bloom macOS */,
-				9A38277C1F5D9DCF0085363F /* BloomTests */,
+				9A38277C1F5D9DCF0085363F /* BloomTests iOS */,
+				9AEE231A1F7BCE5C00B27594 /* BloomTests macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -389,6 +440,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9A65F9CA1F5E444E00380FA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9AEE232B1F7BCE5C00B27594 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -462,6 +520,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9AEE231D1F7BCE5C00B27594 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AEE231E1F7BCE5C00B27594 /* FileTests.swift in Sources */,
+				9AEE231F1F7BCE5C00B27594 /* Fragment+ConvenienceTests.swift in Sources */,
+				9AEE23201F7BCE5C00B27594 /* BackgroundColorTests.swift in Sources */,
+				9AEE23211F7BCE5C00B27594 /* AttributeCollectionTests.swift in Sources */,
+				9AEE23221F7BCE5C00B27594 /* TextColorTests.swift in Sources */,
+				9AEE23231F7BCE5C00B27594 /* String+PathTests.swift in Sources */,
+				9AEE23241F7BCE5C00B27594 /* StyleTests.swift in Sources */,
+				9AEE23251F7BCE5C00B27594 /* FragmentTests.swift in Sources */,
+				9AEE23261F7BCE5C00B27594 /* EscapeSequenceTests.swift in Sources */,
+				9AEE23271F7BCE5C00B27594 /* File.PermissionsTests.swift in Sources */,
+				9AEE23281F7BCE5C00B27594 /* AttributeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -469,6 +545,11 @@
 			isa = PBXTargetDependency;
 			target = 9A3827731F5D9DCF0085363F /* Bloom iOS */;
 			targetProxy = 9A38277F1F5D9DCF0085363F /* PBXContainerItemProxy */;
+		};
+		9AEE23321F7BCF2800B27594 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A65F9BB1F5E444E00380FA1 /* Bloom macOS */;
+			targetProxy = 9AEE23311F7BCF2800B27594 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -641,8 +722,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BloomTests/Info.plist;
@@ -659,8 +740,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BloomTests/Info.plist;
@@ -726,6 +807,46 @@
 			};
 			name = Release;
 		};
+		9AEE232D1F7BCE5C00B27594 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = BloomTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.BloomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		9AEE232E1F7BCE5C00B27594 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = BloomTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.BloomTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -747,7 +868,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9A38278B1F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "BloomTests" */ = {
+		9A38278B1F5D9DCF0085363F /* Build configuration list for PBXNativeTarget "BloomTests iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9A38278C1F5D9DCF0085363F /* Debug */,
@@ -761,6 +882,15 @@
 			buildConfigurations = (
 				9A65F9CC1F5E444E00380FA1 /* Debug */,
 				9A65F9CD1F5E444E00380FA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9AEE232C1F7BCE5C00B27594 /* Build configuration list for PBXNativeTarget "BloomTests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9AEE232D1F7BCE5C00B27594 /* Debug */,
+				9AEE232E1F7BCE5C00B27594 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
