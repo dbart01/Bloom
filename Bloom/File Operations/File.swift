@@ -189,36 +189,8 @@ public class File {
     }
     
     public static func chmod(at url: URL, permissions: Int, recursive: Bool = false) throws {
-        
         let attributes = [FileAttributeKey.posixPermissions: permissions]
-        
-        let (fileExists, isDirectory) = self.exists(url)
-        if fileExists {
-            
-            if recursive && isDirectory {
-                
-                /* -----------------------------------
-                 ** Recursively traverse the directory
-                 ** and set the permission on the files
-                 ** and directories in reverse order;
-                 ** leaf -> root.
-                 */
-                let files = try self.ls(url, options: [.recursive, .hidden])
-                for file in files.reversed() {
-                    try self.chmod(at: file, permissions: permissions, recursive: recursive)
-                }
-                
-                /* ---------------------------------
-                 ** Afer updating the contents set
-                 ** the root directory permissions.
-                 */
-                try self.chmod(at: url, permissions: permissions, recursive: false)
-                
-            } else {
-                print("Updating permissions: \(url.lastPathComponent)")
-                try self.fileManager.setAttributes(attributes, ofItemAtPath: url.path)
-            }
-        }
+        try self.setAttributes(attributes, at: url, recursive: recursive)
     }
     
     // ----------------------------------
@@ -251,5 +223,38 @@ public class File {
         }
         
         return urls
+    }
+    
+    // ----------------------------------
+    //  MARK: - Attributes -
+    //
+    private static func setAttributes(_ attributes: [FileAttributeKey: Any], at url: URL, recursive: Bool = false) throws {
+        
+        let (fileExists, isDirectory) = self.exists(url)
+        if fileExists {
+            if recursive && isDirectory {
+                
+                /* -----------------------------------
+                 ** Recursively traverse the directory
+                 ** and set the permission on the files
+                 ** and directories in reverse order;
+                 ** leaf -> root.
+                 */
+                let files = try self.ls(url, options: [.recursive, .hidden])
+                for file in files.reversed() {
+                    try self.setAttributes(attributes, at: file, recursive: recursive)
+                }
+                
+                /* ---------------------------------
+                 ** Afer updating the contents set
+                 ** the root directory permissions.
+                 */
+                try self.setAttributes(attributes, at: url, recursive: false)
+                
+            } else {
+                print("Updating permissions: \(url.lastPathComponent)")
+                try self.fileManager.setAttributes(attributes, ofItemAtPath: url.path)
+            }
+        }
     }
 }

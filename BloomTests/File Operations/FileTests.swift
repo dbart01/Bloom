@@ -485,7 +485,9 @@ class FileTests: XCTestCase {
         self.write("File 2 content", path: "\(path)/file2")
         self.write("File 3 content", path: "\(path)/file3")
         
-        let listing = try! File.ls(path)
+        var listing = try! File.ls(path)
+        
+        listing.sort()
         
         XCTAssertEqual(listing.count, 3)
         XCTAssertEqual(listing, [
