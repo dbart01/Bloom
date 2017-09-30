@@ -36,10 +36,12 @@ public class File {
     // ----------------------------------
     //  MARK: - Working Directory -
     //
+    @discardableResult
     public static func cd(into path: FilePath) -> Bool {
         return self.fileManager.changeCurrentDirectoryPath(path.expandingTilde)
     }
     
+    @discardableResult
     public static func cd(into url: URL) -> Bool {
         return self.cd(into: url.path)
     }
@@ -223,6 +225,50 @@ public class File {
         }
         
         return urls
+    }
+    
+    // ----------------------------------
+    //  MARK: - Symlinks -
+    //
+    static func resolveSymlinksIn(_ path: FilePath) -> FilePath {
+        return resolveSymlinksIn(path.fileURL).path
+    }
+    
+    static func resolveSymlinksIn(_ url: URL) -> URL {
+        let components = url.pathComponents
+        
+        guard components.count > 1 else {
+            return url
+        }
+        
+        var base = URL(fileURLWithPath: components[0])
+        for component in components.suffix(from: 1) {
+            
+            var resolvedComponent = component
+            
+            let extendedComponent = base.appendingPathComponent(component).path
+            if let destination = try? self.fileManager.destinationOfSymbolicLink(atPath: extendedComponent) {
+                
+                if destination.hasPrefix("/") {
+                    base = URL(fileURLWithPath: destination)
+                    
+                    /* -----------------------------------------
+                     ** If the symbolic link is an absolute path
+                     ** then it will be come the new base URL.
+                     ** We should continue appending components
+                     ** starting with the next component.
+                     */
+                    continue
+                    
+                } else {
+                    resolvedComponent = destination
+                }
+            }
+            
+            base = base.appendingPathComponent(resolvedComponent)
+        }
+        
+        return base
     }
     
     // ----------------------------------

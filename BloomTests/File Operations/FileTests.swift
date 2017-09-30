@@ -550,6 +550,28 @@ class FileTests: XCTestCase {
     }
     
     // ----------------------------------
+    //  MARK: - Symlinks -
+    //
+    func testResolveAbsoluteSymlinks() {
+        let path = "\(FileTests.rootPath)/symlinks"
+        
+        try! File.mkdir(path)
+        
+        File.cd(into: path)
+        
+        let containerPath = "container/subcontainer"
+        let filePath      = "\(containerPath)/file1.txt"
+        
+        try! File.mkdir(containerPath, createIntermediate: true)
+        self.write("file 1", path: "\(containerPath)/file1.txt")
+        try! File.ln(at: "file1_link.txt", source: filePath, symbolic: true)
+        
+        let resolvedPath = File.resolveSymlinksIn("file1_link.txt")
+        
+        XCTAssertEqual(resolvedPath, "\(path)/\(filePath)".expandingTilde)
+    }
+    
+    // ----------------------------------
     //  MARK: - Utilities -
     //
     private func fileExists(at path: FilePath) -> Bool {
