@@ -34,7 +34,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9AEE231A1F7BCE5C00B27594"
+               BlueprintIdentifier = "9A4E48F31F7C3C0200DE0940"
                BuildableName = "BloomTests macOS.xctest"
                BlueprintName = "BloomTests macOS"
                ReferencedContainer = "container:Bloom.xcodeproj">

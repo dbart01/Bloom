@@ -20,20 +20,6 @@
                ReferencedContainer = "container:Bloom.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9A65F9BB1F5E444E00380FA1"
-               BuildableName = "Bloom.framework"
-               BlueprintName = "Bloom macOS"
-               ReferencedContainer = "container:Bloom.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -96,6 +82,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9A38277C1F5D9DCF0085363F"
+            BuildableName = "BloomTests iOS.xctest"
+            BlueprintName = "BloomTests iOS"
+            ReferencedContainer = "container:Bloom.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
