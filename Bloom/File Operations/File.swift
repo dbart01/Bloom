@@ -120,7 +120,11 @@ public class File {
     //  MARK: - Links -
     //
     public static func ln(at linkPath: FilePath, source: FilePath, symbolic: Bool = false) throws {
-        try self.ln(at: linkPath.fileURL, source: source.fileURL, symbolic: symbolic)
+        if symbolic {
+            try self.fileManager.createSymbolicLink(atPath: linkPath.expandingTilde, withDestinationPath: source.expandingTilde)
+        } else {
+            try self.fileManager.linkItem(atPath: source.expandingTilde, toPath: linkPath.expandingTilde)
+        }
     }
     
     public static func ln(at linkURL: URL, source: URL, symbolic: Bool = false) throws {

@@ -256,9 +256,39 @@ class FileTests: XCTestCase {
     // ----------------------------------
     //  MARK: - Links -
     //
+    func testLinkHardURL() {
+        let source = "\(FileTests.rootPath)/hardLinkSourceURL".fileURL
+        let link   = "\(FileTests.rootPath)/hardLinkURL".fileURL
+        
+        self.write("Hard link content", path: source.path)
+        
+        XCTAssertTrue(self.fileExists(at: source.path))
+        XCTAssertFalse(self.fileExists(at: link.path))
+        
+        try! File.ln(at: link, source: source)
+        
+        XCTAssertTrue(self.fileExists(at: link.path))
+        XCTAssertNil(self.symbolicLinkSource(at: link.path))
+    }
+    
+    func testLinkSymbolicAbsoluteURL() {
+        let source = "\(FileTests.rootPath)/symLinkAbsoluteSourceURL".fileURL
+        let link   = "\(FileTests.rootPath)/symLinkAbsoluteURL".fileURL
+        
+        self.write("Sym link content", path: source.path)
+        
+        XCTAssertTrue(self.fileExists(at: source.path))
+        XCTAssertFalse(self.fileExists(at: link.path))
+        
+        try! File.ln(at: link, source: source, symbolic: true)
+        
+        XCTAssertTrue(self.fileExists(at: link.path))
+        XCTAssertEqual(self.symbolicLinkSource(at: link.path), source.path)
+    }
+    
     func testLinkHard() {
-        let source = "\(FileTests.rootPath)/hardLinkSource"
-        let link   = "\(FileTests.rootPath)/hardLink"
+        let source = "\(FileTests.rootPath)/hardLinkSourceURL"
+        let link   = "\(FileTests.rootPath)/hardLinkURL"
         
         self.write("Hard link content", path: source)
         
@@ -271,11 +301,28 @@ class FileTests: XCTestCase {
         XCTAssertNil(self.symbolicLinkSource(at: link))
     }
     
-    func testLinkSymbolic() {
-        let source = "\(FileTests.rootPath)/symLinkSource"
-        let link   = "\(FileTests.rootPath)/symLink"
+    func testLinkSymbolicAbsolute() {
+        let source = "\(FileTests.rootPath)/symLinkAbsoluteSource"
+        let link   = "\(FileTests.rootPath)/symLinkAbsolute"
         
-        self.write("Sym link content", path: source)
+        self.write("Sym link absolute content", path: source)
+        
+        XCTAssertTrue(self.fileExists(at: source))
+        XCTAssertFalse(self.fileExists(at: link))
+        
+        try! File.ln(at: link, source: source, symbolic: true)
+        
+        XCTAssertTrue(self.fileExists(at: link))
+        XCTAssertEqual(self.symbolicLinkSource(at: link), source.expandingTilde)
+    }
+    
+    func testLinkSymbolicRelative() {
+        File.cd(into: FileTests.rootPath)
+        
+        let source = "symLinkRelativeSource"
+        let link   = "symLinkRelative"
+        
+        self.write("Sym link relative content", path: source)
         
         XCTAssertTrue(self.fileExists(at: source))
         XCTAssertFalse(self.fileExists(at: link))
