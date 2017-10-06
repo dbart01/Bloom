@@ -37,6 +37,7 @@
 		9A3827A01F5DE8050085363F /* AttributeCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A38279F1F5DE8050085363F /* AttributeCollection.swift */; };
 		9A41E2A31F8426FE0059485A /* URL+RelativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4578961F84252000773312 /* URL+RelativeTests.swift */; };
 		9A41E2A41F8426FF0059485A /* URL+RelativeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4578961F84252000773312 /* URL+RelativeTests.swift */; };
+		9A41E2AD1F87A1B90059485A /* URL+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4578931F8424F600773312 /* URL+Relative.swift */; };
 		9A4578941F8424F700773312 /* URL+Relative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A4578931F8424F600773312 /* URL+Relative.swift */; };
 		9A4E48FF1F7C3C2D00DE0940 /* FileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A11EA781F6AA1D60051F987 /* FileTests.swift */; };
 		9A4E49001F7C3C2D00DE0940 /* File.PermissionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2EFDE1F6EB7480037E0D7 /* File.PermissionsTests.swift */; };
@@ -548,6 +549,7 @@
 			files = (
 				9A65F9BD1F5E444E00380FA1 /* Fragment+BackgroundColor.swift in Sources */,
 				9A3224EA1F71B60400F1263E /* File.swift in Sources */,
+				9A41E2AD1F87A1B90059485A /* URL+Relative.swift in Sources */,
 				9A65F9BE1F5E444E00380FA1 /* Attribute.swift in Sources */,
 				9A65F9BF1F5E444E00380FA1 /* Fragment.swift in Sources */,
 				9A65F9C01F5E444E00380FA1 /* Fragment+Styles.swift in Sources */,
@@ -789,7 +791,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BloomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dimabart.BloomTests-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -805,7 +807,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = BloomTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.dimabart.BloomTests-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -828,7 +830,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = mh_dylib;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.Bloom;
 				PRODUCT_NAME = Bloom;
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -855,7 +857,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimabart.Bloom;
 				PRODUCT_NAME = Bloom;
 				PROVISIONING_PROFILE_SPECIFIER = "";
