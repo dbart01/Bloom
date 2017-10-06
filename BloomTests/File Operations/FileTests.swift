@@ -669,7 +669,10 @@ class FileTests: XCTestCase {
     }
     
     private func touchDates(at path: FilePath) -> (created: Date, modified: Date, accessed: Date) {
-        let values = try! path.fileURL.resourceValues(forKeys: [.creationDateKey, .contentModificationDateKey, .contentAccessDateKey])
+        var url = path.fileURL
+        url.removeAllCachedResourceValues()
+        
+        let values = try! url.resourceValues(forKeys: [.creationDateKey, .contentModificationDateKey, .contentAccessDateKey])
         return (
             values.creationDate!,
             values.contentModificationDate!,
