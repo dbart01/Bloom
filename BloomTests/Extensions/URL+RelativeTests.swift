@@ -104,13 +104,24 @@ class URL_RelativeTests: XCTestCase {
         XCTAssertEqual(relativeURL?.relativePath, "../..")
     }
     
-    func _testPathFromRelative() { // TODO: Fix relative URLs
-        let url1 = URL(fileURLWithPath: "var/container/")
-        let url2 = URL(fileURLWithPath: "etc/")
+    func testPathToSelf() {
+        let url1 = URL(fileURLWithPath: "/")
+        let url2 = URL(fileURLWithPath: "/")
         
         let relativeURL = url1.relativePath(to: url2)
         
         XCTAssertNotNil(relativeURL)
-        XCTAssertEqual(relativeURL?.relativePath, "../../etc")
+        XCTAssertEqual(relativeURL?.relativePath, ".")
     }
+    
+    // TODO: Fix relative URLs
+//    func _testPathFromRelative() {
+//        let url1 = URL(fileURLWithPath: "var/container/")
+//        let url2 = URL(fileURLWithPath: "etc/")
+//
+//        let relativeURL = url1.relativePath(to: url2)
+//
+//        XCTAssertNotNil(relativeURL)
+//        XCTAssertEqual(relativeURL?.relativePath, "../../etc")
+//    }
 }

@@ -43,6 +43,9 @@ extension URL {
         let fromComponents = fromURL.pathComponents
         let toComponents   = url.pathComponents
         
+        var components: [String] = []
+        components.append(".")
+        
         for i in 0..<max(fromComponents.count, toComponents.count) {
             let fromC = i < fromComponents.count ? fromComponents[i] : nil
             let toC   = i < toComponents.count   ? toComponents[i]   : nil
@@ -51,18 +54,13 @@ extension URL {
                 continue
             }
             
-            var components: [String] = []
-            
             if (fromC == nil || toC == nil) || (fromC != nil && toC != nil) { // Destination is 1+ levels higher or lower
                 components = fromComponents[i...].map { _ in ".." }
-            } else { // Same directory
-                components.append(".")
             }
             components.append(contentsOf: toComponents[i...])
-            
-            return URL(fileURLWithComponents: components)
+            break
         }
         
-        return self
+        return URL(fileURLWithComponents: components)
     }
 }
