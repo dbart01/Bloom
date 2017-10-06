@@ -600,7 +600,27 @@ class FileTests: XCTestCase {
     //  MARK: - Symlinks -
     //
     func testResolveAbsoluteSymlinks() {
-        let path = "\(FileTests.rootPath)/symlinks"
+        let path = "\(FileTests.rootPath)/symlinksAbsolute"
+        
+        try! File.mkdir(path)
+        
+        File.cd(into: path)
+        
+        let containerPath = "container/subcontainer"
+        let fileURL       = "\(containerPath)/file1.txt".fileURL
+        let linkURL       = "\(path)/file1_link.txt".fileURL
+        
+        try! File.mkdir(containerPath, createIntermediate: true)
+        self.write("file 1", path: fileURL.path)
+        try! File.ln(at: linkURL, source: fileURL, symbolic: true)
+        
+        let resolvedPath = File.resolveSymlinksIn(linkURL)
+        
+        XCTAssertEqual(resolvedPath.path, fileURL.path)
+    }
+    
+    func testResolveRelativeSymlinks() {
+        let path = "\(FileTests.rootPath)/symlinksRelative"
         
         try! File.mkdir(path)
         
@@ -611,11 +631,20 @@ class FileTests: XCTestCase {
         
         try! File.mkdir(containerPath, createIntermediate: true)
         self.write("file 1", path: "\(containerPath)/file1.txt")
+        
         try! File.ln(at: "file1_link.txt", source: filePath, symbolic: true)
         
         let resolvedPath = File.resolveSymlinksIn("file1_link.txt")
         
         XCTAssertEqual(resolvedPath, "\(path)/\(filePath)".expandingTilde)
+    }
+    
+    func testResolveShortSymlink() {
+        let path = "/"
+        
+        let resolvedPath = File.resolveSymlinksIn(path)
+        
+        XCTAssertEqual(resolvedPath, path)
     }
     
     // ----------------------------------
