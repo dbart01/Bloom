@@ -67,9 +67,6 @@ class FileTests: XCTestCase {
     //  MARK: - Working Directory -
     //
     func testChangeDirectory() {
-        let userDir = "~".expandingTilde
-        XCTAssertEqual(userDir, self.fileManager.currentDirectoryPath)
-        
         let cdPath  = "~"
         XCTAssertTrue(File.cd(into: cdPath))
         XCTAssertEqual(cdPath.expandingTilde, self.fileManager.currentDirectoryPath)
