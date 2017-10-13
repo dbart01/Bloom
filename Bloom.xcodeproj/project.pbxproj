@@ -179,6 +179,7 @@
 			children = (
 				9A3224E71F71B5DC00F1263E /* URL+ResourceValues.swift */,
 				9A4578931F8424F600773312 /* URL+Relative.swift */,
+				9A8E12E71F6B1C3300963253 /* String+Path.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				9A4578961F84252000773312 /* URL+RelativeTests.swift */,
+				9A8E12E91F6B1C5000963253 /* String+PathTests.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -262,7 +264,6 @@
 				9AC2EFDC1F6EB6EF0037E0D7 /* File.Permissions.swift */,
 				9A3224E21F71B4AC00F1263E /* File.OperationError.swift */,
 				9A3224E41F71B59E00F1263E /* File.ListOptions.swift */,
-				9A8E12E71F6B1C3300963253 /* String+Path.swift */,
 			);
 			path = "File Operations";
 			sourceTree = "<group>";
@@ -282,7 +283,6 @@
 			children = (
 				9A11EA781F6AA1D60051F987 /* FileTests.swift */,
 				9AC2EFDE1F6EB7480037E0D7 /* File.PermissionsTests.swift */,
-				9A8E12E91F6B1C5000963253 /* String+PathTests.swift */,
 			);
 			path = "File Operations";
 			sourceTree = "<group>";
