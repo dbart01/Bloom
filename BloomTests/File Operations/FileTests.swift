@@ -29,13 +29,14 @@ import XCTest
 @testable import Bloom
 
 class FileTests: XCTestCase {
-    
-    static let testsDirectory = "BloomTests"
-    static let caseDirectory  = String(describing: FileTests.self)
-    static let rootPath       = "~/\(FileTests.testsDirectory)/\(FileTests.caseDirectory)"
 
     private let fileManager = FileManager()
-    private var testDirectory: URL!
+    
+    private lazy var testDirectory: String = {
+        let caseDirectory = String(describing: FileTests.self)
+        let tempDirectory = URL(fileURLWithPath: NSTemporaryDirectory())
+        return tempDirectory.appendingPathComponent("BloomTests").appendingPathComponent(caseDirectory).path.resolvingSymlinks
+    }()
     
     // ----------------------------------
     //  MARK: - Setup -
@@ -43,24 +44,22 @@ class FileTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        self.setupTestDirectory()
-        self.recreateTestDirectory()
+        self.removeTestDirectory()
+        self.createTestDirectory()
     }
     
     override func tearDown() {
         super.tearDown()
         
-        self.recreateTestDirectory()
+        self.removeTestDirectory()
     }
     
-    func setupTestDirectory() {
-        let homeDirectory  = URL(fileURLWithPath: NSHomeDirectory())
-        self.testDirectory = homeDirectory.appendingPathComponent(FileTests.testsDirectory).appendingPathComponent(FileTests.caseDirectory)
+    func removeTestDirectory() {
+        try? self.fileManager.removeItem(at: URL(fileURLWithPath: self.testDirectory))
     }
     
-    func recreateTestDirectory() {
-        try? self.fileManager.removeItem(at: self.testDirectory)
-        try? self.fileManager.createDirectory(at: self.testDirectory, withIntermediateDirectories: true, attributes: nil)
+    func createTestDirectory() {
+        try? self.fileManager.createDirectory(at: URL(fileURLWithPath: self.testDirectory), withIntermediateDirectories: true, attributes: nil)
     }
     
     // ----------------------------------
@@ -71,7 +70,7 @@ class FileTests: XCTestCase {
         XCTAssertTrue(File.cd(into: cdPath))
         XCTAssertEqual(cdPath.expandingTilde, self.fileManager.currentDirectoryPath)
         
-        let cdPath2 = "\(FileTests.rootPath)".fileURL
+        let cdPath2 = "\(self.testDirectory)".fileURL
         XCTAssertTrue(File.cd(into: cdPath2))
         XCTAssertEqual(cdPath2, URL(fileURLWithPath: self.fileManager.currentDirectoryPath))
     }
@@ -82,7 +81,7 @@ class FileTests: XCTestCase {
         
         XCTAssertEqual(pwd1, File.pwd)
         
-        let pwd2 = "\(FileTests.rootPath)".expandingTilde
+        let pwd2 = "\(self.testDirectory)".expandingTilde
         self.fileManager.changeCurrentDirectoryPath(pwd2)
         
         XCTAssertEqual(pwd2, File.pwd)
@@ -92,7 +91,7 @@ class FileTests: XCTestCase {
     //  MARK: - Queries -
     //
     func testExistsWithExistingFile() {
-        let path = "\(FileTests.rootPath)/existsFile.txt"
+        let path = "\(self.testDirectory)/existsFile.txt"
         
         let (preExists, preIsDirectory) = File.exists(path)
         XCTAssertFalse(preExists)
@@ -106,7 +105,7 @@ class FileTests: XCTestCase {
     }
     
     func testExistsWithExistingDirectory() {
-        let path = "\(FileTests.rootPath)/existsDirectory"
+        let path = "\(self.testDirectory)/existsDirectory"
         
         let (preExists, preIsDirectory) = File.exists(path)
         XCTAssertFalse(preExists)
@@ -120,7 +119,7 @@ class FileTests: XCTestCase {
     }
     
     func testEmptyWithExistingEmptyDirectory() {
-        let path = "\(FileTests.rootPath)/existingEmptyDirectory"
+        let path = "\(self.testDirectory)/existingEmptyDirectory"
         
         try! File.mkdir(path)
         
@@ -128,7 +127,7 @@ class FileTests: XCTestCase {
     }
     
     func testEmptyWithNonexistentDirectory() {
-        let path = "\(FileTests.rootPath)/nonexistentDirectory"
+        let path = "\(self.testDirectory)/nonexistentDirectory"
         
         XCTAssertTrue(File.empty(path))
     }
@@ -137,8 +136,8 @@ class FileTests: XCTestCase {
     //  MARK: - Move -
     //
     func testMove() {
-        let from    = "\(FileTests.rootPath)/move1.txt"
-        let to      = "\(FileTests.rootPath)/move2.txt"
+        let from    = "\(self.testDirectory)/move1.txt"
+        let to      = "\(self.testDirectory)/move2.txt"
         let content = "Move content"
         
         self.write(content, path: from)
@@ -159,8 +158,8 @@ class FileTests: XCTestCase {
     //  MARK: - Copy -
     //
     func testCopy() {
-        let from    = "\(FileTests.rootPath)/copy1.txt"
-        let to      = "\(FileTests.rootPath)/copy2.txt"
+        let from    = "\(self.testDirectory)/copy1.txt"
+        let to      = "\(self.testDirectory)/copy2.txt"
         let content = "Copy content"
         
         self.write(content, path: from)
@@ -181,7 +180,7 @@ class FileTests: XCTestCase {
     //  MARK: - Delete -
     //
     func testRemoveFile() {
-        let path = "\(FileTests.rootPath)/toRemove.txt"
+        let path = "\(self.testDirectory)/toRemove.txt"
         
         try! File.touch(path)
         XCTAssertTrue(self.fileExists(at: path))
@@ -192,7 +191,7 @@ class FileTests: XCTestCase {
     }
     
     func testRemoveEmptyDirectory() {
-        let temp = "\(FileTests.rootPath)/emptyDir"
+        let temp = "\(self.testDirectory)/emptyDir"
         
         try! File.mkdir(temp)
         XCTAssertTrue(self.fileExists(at: temp))
@@ -203,7 +202,7 @@ class FileTests: XCTestCase {
     }
     
     func testRemoveNonemptyDirectory() {
-        let temp = "\(FileTests.rootPath)/nonEmpty"
+        let temp = "\(self.testDirectory)/nonEmpty"
         
         try! File.mkdir(temp)
         XCTAssertTrue(self.fileExists(at: temp))
@@ -216,7 +215,7 @@ class FileTests: XCTestCase {
     }
     
     func testRemoveNonemptyDirectoryAttempt() {
-        let temp = "\(FileTests.rootPath)/nonEmptyAttempt"
+        let temp = "\(self.testDirectory)/nonEmptyAttempt"
         
         try! File.mkdir(temp)
         XCTAssertTrue(self.fileExists(at: temp))
@@ -236,7 +235,7 @@ class FileTests: XCTestCase {
     }
     
     func testRemoveNonexistantDirectory() {
-        let temp = "\(FileTests.rootPath)/missing"
+        let temp = "\(self.testDirectory)/missing"
         
         XCTAssertFalse(self.fileExists(at: temp))
         
@@ -250,12 +249,29 @@ class FileTests: XCTestCase {
         XCTAssertFalse(self.fileExists(at: temp))
     }
     
+    func testRemoveSymbolicLink() {
+        let temp   = "\(self.testDirectory)/removeSymlink"
+        let source = "\(self.testDirectory)/removeSymlinkSource"
+        
+        self.write("removeSymlink", path: source)
+        try! File.ln(at: temp, source: source, symbolic: true)
+        
+        XCTAssertTrue(self.fileExists(at: temp))
+        XCTAssertTrue(self.fileExists(at: source))
+        
+        try! File.rm(at: temp)
+        try! File.rm(at: source)
+        
+        XCTAssertFalse(self.fileExists(at: temp))
+        XCTAssertFalse(self.fileExists(at: source))
+    }
+    
     // ----------------------------------
     //  MARK: - Links -
     //
     func testLinkHardURL() {
-        let source = "\(FileTests.rootPath)/hardLinkSourceURL".fileURL
-        let link   = "\(FileTests.rootPath)/hardLinkURL".fileURL
+        let source = "\(self.testDirectory)/hardLinkSourceURL".fileURL
+        let link   = "\(self.testDirectory)/hardLinkURL".fileURL
         
         self.write("Hard link content", path: source.path)
         
@@ -269,8 +285,8 @@ class FileTests: XCTestCase {
     }
     
     func testLinkSymbolicAbsoluteURL() {
-        let source = "\(FileTests.rootPath)/symLinkAbsoluteSourceURL".fileURL
-        let link   = "\(FileTests.rootPath)/symLinkAbsoluteURL".fileURL
+        let source = "\(self.testDirectory)/symLinkAbsoluteSourceURL".fileURL
+        let link   = "\(self.testDirectory)/symLinkAbsoluteURL".fileURL
         
         self.write("Sym link content", path: source.path)
         
@@ -284,8 +300,8 @@ class FileTests: XCTestCase {
     }
     
     func testLinkHard() {
-        let source = "\(FileTests.rootPath)/hardLinkSourceURL"
-        let link   = "\(FileTests.rootPath)/hardLinkURL"
+        let source = "\(self.testDirectory)/hardLinkSourceURL"
+        let link   = "\(self.testDirectory)/hardLinkURL"
         
         self.write("Hard link content", path: source)
         
@@ -299,8 +315,8 @@ class FileTests: XCTestCase {
     }
     
     func testLinkSymbolicAbsolute() {
-        let source = "\(FileTests.rootPath)/symLinkAbsoluteSource"
-        let link   = "\(FileTests.rootPath)/symLinkAbsolute"
+        let source = "\(self.testDirectory)/symLinkAbsoluteSource"
+        let link   = "\(self.testDirectory)/symLinkAbsolute"
         
         self.write("Sym link absolute content", path: source)
         
@@ -314,7 +330,7 @@ class FileTests: XCTestCase {
     }
     
     func testLinkSymbolicRelative() {
-        File.cd(into: FileTests.rootPath)
+        File.cd(into: self.testDirectory)
         
         let source = "symLinkRelativeSource"
         let link   = "symLinkRelative"
@@ -327,14 +343,14 @@ class FileTests: XCTestCase {
         try! File.ln(at: link, source: source, symbolic: true)
         
         XCTAssertTrue(self.fileExists(at: link))
-        XCTAssertEqual(self.symbolicLinkSource(at: link), source.expandingTilde)
+        XCTAssertEqual(self.symbolicLinkSource(at: link), source)
     }
     
     // ----------------------------------
     //  MARK: - Touch -
     //
     func testTouchNonexistantFile() {
-        let path = "\(FileTests.rootPath)/touch.text"
+        let path = "\(self.testDirectory)/touch.text"
         
         try! File.touch(path)
         
@@ -343,7 +359,7 @@ class FileTests: XCTestCase {
     }
     
     func testTouchExistingFileContentUnchanged() {
-        let path    = "\(FileTests.rootPath)/content.text"
+        let path    = "\(self.testDirectory)/content.text"
         let content = "This is a test string"
         
         self.write(content, path: path)
@@ -358,7 +374,7 @@ class FileTests: XCTestCase {
     }
     
     func testTouchExistingFileDefaultDate() {
-        let path = "\(FileTests.rootPath)/defaultDate.text"
+        let path = "\(self.testDirectory)/defaultDate.text"
         self.write("Content", path: path)
         
         let originalDates = self.touchDates(at: path)
@@ -375,7 +391,7 @@ class FileTests: XCTestCase {
     }
     
     func testTouchExistingFileCustomDate() {
-        let path = "\(FileTests.rootPath)/customDate.text"
+        let path = "\(self.testDirectory)/customDate.text"
         self.write("Content", path: path)
         
         let date = self.futureDate()
@@ -393,7 +409,7 @@ class FileTests: XCTestCase {
     //  MARK: - Create Directory -
     //
     func testCreateDirectoryWithoutIntermediate() {
-        let path = "\(FileTests.rootPath)/mkdir"
+        let path = "\(self.testDirectory)/mkdir"
         
         try! File.mkdir(path)
         
@@ -401,7 +417,7 @@ class FileTests: XCTestCase {
     }
     
     func testCreateDirectoryAttemptIntermediate() {
-        let path = "\(FileTests.rootPath)/intermediate/mkdir"
+        let path = "\(self.testDirectory)/intermediate/mkdir"
         
         do {
             try File.mkdir(path)
@@ -414,7 +430,7 @@ class FileTests: XCTestCase {
     }
     
     func testCreateDirectoryWithIntermediate() {
-        let path = "\(FileTests.rootPath)/intermediate/mkdir"
+        let path = "\(self.testDirectory)/intermediate/mkdir"
         
         try! File.mkdir(path, createIntermediate: true)
         
@@ -425,7 +441,7 @@ class FileTests: XCTestCase {
     //  MARK: - Permissions -
     //
     func testPermissionsWriteRaw() {
-        let path = "\(FileTests.rootPath)/permissionsRawWrite"
+        let path = "\(self.testDirectory)/permissionsRawWrite"
         self.write("Raw permissions content for writing", path: path)
 
         XCTAssertEqual(self.posixPermissions(at: path), 0o644)
@@ -436,7 +452,7 @@ class FileTests: XCTestCase {
     }
     
     func testPermissionsWriteTyped() {
-        let path = "\(FileTests.rootPath)/permissionsTypedWrite"
+        let path = "\(self.testDirectory)/permissionsTypedWrite"
         self.write("Typed permissions content for writing", path: path)
         
         XCTAssertEqual(self.posixPermissions(at: path), 0o644)
@@ -451,7 +467,7 @@ class FileTests: XCTestCase {
     }
     
     func testPermissionsWriteTypedRecursive() {
-        let path = "\(FileTests.rootPath)/permissionsTypedWriteRecursive"
+        let path = "\(self.testDirectory)/permissionsTypedWriteRecursive"
         
         let directories = [
             path,
@@ -510,7 +526,7 @@ class FileTests: XCTestCase {
     }
     
     func testPermissionsRead() {
-        let path = "\(FileTests.rootPath)/permissionsTypedRead"
+        let path = "\(self.testDirectory)/permissionsTypedRead"
         self.write("Typed permissions content for reading", path: path)
         
         let permissions = try! File.chmod(at: path)
@@ -521,7 +537,7 @@ class FileTests: XCTestCase {
     //  MARK: - List -
     //
     func testListShallowVisible() {
-        let path = "\(FileTests.rootPath)/listShallowVisible"
+        let path = "\(self.testDirectory)/listShallowVisible"
         
         try! File.mkdir(path)
         self.write("File 0 content", path: "\(path)/.file0")
@@ -542,7 +558,7 @@ class FileTests: XCTestCase {
     }
     
     func testListDeepShowingHidden() {
-        let path = "\(FileTests.rootPath)/listDeepShowingHidden"
+        let path = "\(self.testDirectory)/listDeepShowingHidden"
         
         try! File.mkdir(path)
         self.write("File 0 content", path: "\(path)/.file0")
@@ -578,7 +594,7 @@ class FileTests: XCTestCase {
     }
     
     func testListDeepSkippingPackages() {
-        let path = "\(FileTests.rootPath)/listDeepSkippingPackages"
+        let path = "\(self.testDirectory)/listDeepSkippingPackages"
         
         try! File.mkdir(path)
         try! File.mkdir("\(path)/Test.app")
@@ -597,7 +613,7 @@ class FileTests: XCTestCase {
     //  MARK: - Symlinks -
     //
     func testResolveAbsoluteSymlinks() {
-        let path = "\(FileTests.rootPath)/symlinksAbsolute"
+        let path = "\(self.testDirectory)/symlinksAbsolute"
         
         try! File.mkdir(path)
         
@@ -617,7 +633,7 @@ class FileTests: XCTestCase {
     }
     
     func testResolveRelativeSymlinks() {
-        let path = "\(FileTests.rootPath)/symlinksRelative"
+        let path = "\(self.testDirectory)/symlinksRelative"
         
         try! File.mkdir(path)
         

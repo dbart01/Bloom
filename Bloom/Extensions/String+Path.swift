@@ -46,9 +46,13 @@ public extension String {
         }
         return self
     }
+    
+    public var resolvingSymlinks: String {
+        return File.resolveSymlinksIn(URL(fileURLWithPath: self)).path
+    }
 }
 
-public class System {
+internal class System {
     
     static var shared: System = System()
     

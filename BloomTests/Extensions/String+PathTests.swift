@@ -38,6 +38,16 @@ class String_PathTests: XCTestCase {
         
         System.shared = MockSystem()
     }
+    
+    // ----------------------------------
+    //  MARK: - File URL -
+    //
+    func testConversionToURL() {
+        let path = "~/some/path/to/file"
+        let url  = path.fileURL
+        
+        XCTAssertEqual(url.absoluteString, "file://\(MockSystem.shared.homeDirectory)/some/path/to/file")
+    }
 
     // ----------------------------------
     //  MARK: - Expanding Tilde -
@@ -78,13 +88,13 @@ class String_PathTests: XCTestCase {
     }
     
     // ----------------------------------
-    //  MARK: - File URL -
+    //  MARK: - Symlinks -
     //
-    func testConversionToURL() {
-        let path = "~/some/path/to/file"
-        let url  = path.fileURL
+    func testResolvingSymlinks() {
+        let path     = "/var"
+        let resolved = path.resolvingSymlinks
         
-        XCTAssertEqual(url.absoluteString, "file://\(MockSystem.shared.homeDirectory)/some/path/to/file")
+        XCTAssertEqual(resolved, "/private/var")
     }
 }
 
