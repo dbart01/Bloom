@@ -200,6 +200,52 @@ public class File {
     }
     
     // ----------------------------------
+    //  MARK: - Owner -
+    //
+    public static func chown(at path: FilePath) throws -> Ownership {
+        return try self.chown(at: path.fileURL)
+    }
+    
+    public static func chown(at url: URL) throws -> Ownership {
+        let attributes = try self.fileManager.attributesOfItem(atPath: url.path)
+        
+        let ownerID = attributes[.ownerAccountID]      as! Int
+        let groupID = attributes[.groupOwnerAccountID] as! Int
+
+        let user  = Ownership.User(id: ownerID)
+        let group = Ownership.Group(id: groupID)
+        
+        return Ownership(
+            user:  user,
+            group: group
+        )
+    }
+    
+    public static func chown(at path: FilePath, ownership: Ownership, recursive: Bool = false) throws {
+        try self.chown(at: path.fileURL, ownership: ownership, recursive: recursive)
+    }
+    
+    public static func chown(at url: URL, ownership: Ownership, recursive: Bool = false) throws {
+        guard ownership.user != nil || ownership.group != nil else {
+            return
+        }
+        
+        var attributes: [FileAttributeKey: Any] = [:]
+        
+        if let user = ownership.user {
+            attributes[.ownerAccountID]   = user.id
+            attributes[.ownerAccountName] = user.name
+        }
+        
+        if let group = ownership.group {
+            attributes[.groupOwnerAccountID]   = group.id
+            attributes[.groupOwnerAccountName] = group.name
+        }
+        
+        try self.setAttributes(attributes, at: url, recursive: recursive)
+    }
+    
+    // ----------------------------------
     //  MARK: - List -
     //
     public static func ls(_ path: FilePath, options: ListOptions = .none) throws -> [FilePath] {
@@ -302,7 +348,6 @@ public class File {
                 try self.setAttributes(attributes, at: url, recursive: false)
                 
             } else {
-                print("Updating permissions: \(url.lastPathComponent)")
                 try self.fileManager.setAttributes(attributes, ofItemAtPath: url.path)
             }
         }
