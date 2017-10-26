@@ -27,10 +27,7 @@
 
 import Foundation
 
-@available(OSX 10.13, *)
 public extension Execute {
-    
-    @available(OSX 10.13, *)
     public class Subprocess {
         
         public typealias SubprocessCompletion = (Subprocess) -> Void
@@ -69,7 +66,12 @@ public extension Execute {
         }
         
         private func configureProcess() {
-            self.process.executableURL  = self.command
+            if #available(OSX 10.13, *) {
+                self.process.executableURL = self.command
+            } else {
+                self.process.launchPath = self.command.path
+            }
+            
             self.process.arguments      = self.args ?? []
             self.process.standardOutput = self.outPipe
             self.process.standardError  = self.errorPipe
@@ -162,7 +164,6 @@ public extension Execute {
 // ----------------------------------
 //  MARK: - Error -
 //
-@available(OSX 10.13, *)
 public extension Execute.Subprocess {
     public enum Error: Swift.Error {
         case notLaunched
@@ -171,14 +172,8 @@ public extension Execute.Subprocess {
 }
 
 // ----------------------------------
-//  MARK: - Status -
-//
-
-
-// ----------------------------------
 //  MARK: - State -
 //
-@available(OSX 10.13, *)
 public extension Execute.Subprocess {
     public enum State {
         case ready

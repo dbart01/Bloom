@@ -27,10 +27,7 @@
 
 import Foundation
 
-@available(OSX 10.13, *)
 public extension Execute {
-    
-    @available(OSX 10.13, *)
     public class Path {
         
         public static let system: Path = {

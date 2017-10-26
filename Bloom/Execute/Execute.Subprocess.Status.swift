@@ -27,7 +27,6 @@
 
 import Foundation
 
-@available(OSX 10.13, *)
 public extension Execute {
     public enum Status: Equatable {
         

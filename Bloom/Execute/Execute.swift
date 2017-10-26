@@ -27,7 +27,6 @@
 
 import Foundation
 
-@available(OSX 10.13, *)
 public enum Execute {
     
     // ----------------------------------
@@ -78,7 +77,6 @@ public enum Execute {
 // ----------------------------------
 //  MARK: - Error -
 //
-@available(OSX 10.13, *)
 public extension Execute {
     public enum Error: Swift.Error {
         case packageNotFound

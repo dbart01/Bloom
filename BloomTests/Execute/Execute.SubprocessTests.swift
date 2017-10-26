@@ -28,7 +28,6 @@
 import XCTest
 @testable import Bloom
 
-@available(OSX 10.13, *)
 class Execute_SubprocessTests: XCTestCase {
 
     // ----------------------------------
