@@ -7,5 +7,5 @@ xcodebuild test \
 -project "Bloom.xcodeproj" \
 -scheme "Bloom iOS" \
 -sdk iphonesimulator \
--destination "platform=iOS Simulator,name=iPhone 7,OS=11.0" \
+-destination "platform=iOS Simulator,name=iPhone 7,OS=11.0.1" \
  | xcpretty -c
