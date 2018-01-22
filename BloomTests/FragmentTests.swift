@@ -97,9 +97,20 @@ class FragmentTests: XCTestCase {
     // ----------------------------------
     //  MARK: - Operators -
     //
-    func testOperators() {
+    func testAdditionOperators() {
         let tail     = " in the movie."
         let fragment = Fragment("Something ") + Fragment("exploded").redText.blueBackground + Fragment(" just now").underlined + tail
+        
+        XCTAssertEqual(fragment.description, "Something \u{1B}[31;44mexploded\u{1B}[0m\u{1B}[4m just now\u{1B}[0m in the movie.")
+    }
+    
+    func testAppendOperators() {
+        var fragment = Fragment("")
+        
+        fragment += "Something "
+        fragment += "exploded".redText.blueBackground
+        fragment += " just now".underlined
+        fragment += " in the movie."
         
         XCTAssertEqual(fragment.description, "Something \u{1B}[31;44mexploded\u{1B}[0m\u{1B}[4m just now\u{1B}[0m in the movie.")
     }

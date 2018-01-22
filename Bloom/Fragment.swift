@@ -112,4 +112,12 @@ extension Fragment {
     public static func +(lhs: Fragment, rhs: String) -> Fragment {
         return lhs + Fragment(rhs)
     }
+    
+    public static func +=(lhs: inout Fragment, rhs: Fragment) {
+        return lhs = lhs + rhs
+    }
+    
+    public static func +=(lhs: inout Fragment, rhs: String) {
+        return lhs = lhs + rhs
+    }
 }
